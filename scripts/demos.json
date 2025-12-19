@@ -1,0 +1,290 @@
+[
+  {
+    "isNew": false,
+    "image": "images/demo-3.jpg",
+    "title": "Digital Agency",
+    "linkLight": "aleric/index.html",
+    "linkDark": "aleric/index-dark.html",
+    "linkRTL": "aleric-rtl/index.html",
+    "category": "General"
+  },
+  {
+    "isNew": true,
+    "image": "images/showcase-20.jpg",
+    "title": "Seo Agency",
+    "linkLight": "aleric/index-seo-agency-light.html",
+    "linkDark": "aleric/index-seo-agency-dark.html",
+    "linkRTL": "aleric-rtl/index-seo-agency-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": true,
+    "image": "images/showcase-21.jpg",
+    "title": "Architecture",
+    "linkLight": "aleric/index-architecture-light.html",
+    "linkDark": "aleric/index-architecture-dark.html",
+    "linkRTL": "aleric-rtl/index-architecture-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": true,
+    "image": "images/showcase-19.jpg",
+    "title": "Photographer",
+    "linkLight": "aleric/index-photographer-light.html",
+    "linkDark": "aleric/index-photographer-dark.html",
+    "linkRTL": "aleric-rtl/index-photographer-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": true,
+    "image": "images/showcase-22.jpg",
+    "title": "Shop Modern",
+    "linkLight": "aleric/index-shop-light.html",
+    "linkDark": "aleric/index-shop-dark.html",
+    "linkRTL": "aleric-rtl/index-shop-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-11.jpg",
+    "title": "Personal Portfolio",
+    "linkLight": "aleric/index-personal-portfolio-light.html",
+    "linkDark": "aleric/index-personal-portfolio-dark.html",
+    "linkRTL": "aleric-rtl/index-personal-portfolio-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-9.jpg",
+    "title": "Web Design Agency",
+    "linkLight": "aleric/index-web-design-agency-light.html",
+    "linkDark": "aleric/index-web-design-agency-dark.html",
+    "linkRTL": "aleric-rtl/index-web-design-agency-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-1.jpg",
+    "title": "Startup Agency",
+    "linkLight": "aleric/index-startup-agency-light.html",
+    "linkDark": "aleric/index-startup-agency-dark.html",
+    "linkRTL": "aleric-rtl/index-startup-agency-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-7.jpg",
+    "title": "Creative Agency",
+    "linkLight": "aleric/index-creative-agency-light.html",
+    "linkDark": "aleric/index-creative-agency-dark.html",
+    "linkRTL": "aleric-rtl/index-creative-agency-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-4.jpg",
+    "title": "Medical",
+    "linkLight": "aleric/index-medical-light.html",
+    "linkDark": "aleric/index-medical-dark.html",
+    "linkRTL": "aleric-rtl/index-medical-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-5.jpg",
+    "title": "Ai Startup",
+    "linkLight": "aleric/index-ai-startup-light.html",
+    "linkDark": "aleric/index-ai-startup-dark.html",
+    "linkRTL": "aleric-rtl/index-ai-startup-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-6.jpg",
+    "title": "It Solution",
+    "linkLight": "aleric/index-it-solution-light.html",
+    "linkDark": "aleric/index-it-solution-dark.html",
+    "linkRTL": "aleric-rtl/index-it-solution-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-2.jpg",
+    "title": "Plumbing Service",
+    "linkLight": "aleric/index-plumbing-light.html",
+    "linkDark": "aleric/index-plumbing-dark.html",
+    "linkRTL": "aleric-rtl/index-plumbing-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-8.jpg",
+    "title": "Business Consulting",
+    "linkLight": "aleric/index-consulting-light.html",
+    "linkDark": "aleric/index-consulting-dark.html",
+    "linkRTL": "aleric-rtl/index-consulting-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/demo-10.jpg",
+    "title": "Video Production",
+    "linkLight": "aleric/index-video-production-light.html",
+    "linkDark": "aleric/index-video-production-dark.html",
+    "linkRTL": "aleric-rtl/index-video-production-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-2.jpg",
+    "title": "Parallax Carousel",
+    "linkLight": "aleric/parallax-carousel-light.html",
+    "linkDark": "aleric/parallax-carousel-dark.html",
+    "linkRTL": "aleric-rtl/parallax-carousel-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-3.jpg",
+    "title": "Coverflow Slider",
+    "linkLight": "aleric/portfolio-coverflow-slider-light.html",
+    "linkDark": "aleric/portfolio-coverflow-slider-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-coverflow-slider-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-4.jpg",
+    "title": "Creative Skew",
+    "linkLight": "aleric/portfolio-creative-skew-slider-light.html",
+    "linkDark": "aleric/portfolio-creative-skew-slider-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-creative-skew-slider-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-5.jpg",
+    "title": "Creative Slider",
+    "linkLight": "aleric/portfolio-creative-slider-light.html",
+    "linkDark": "aleric/portfolio-creative-slider-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-creative-slider-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-13.jpg",
+    "title": "Mix Slicer",
+    "linkLight": "aleric/portfolio-mix-slicer.html",
+    "linkDark": "aleric-rtl/portfolio-mix-slicer.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-6.jpg",
+    "title": "Portfolio Showcase",
+    "linkLight": "aleric/portfolio-showcase-light.html",
+    "linkDark": "aleric/portfolio-showcase-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-showcase-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-7.jpg",
+    "title": "Portfolio Slicer",
+    "linkLight": "aleric/portfolio-slicer.html",
+    "linkDark": "aleric-rtl/portfolio-slicer.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-8.jpg",
+    "title": "Portfolio Elegant",
+    "linkLight": "aleric/portfolio-slider-elegant-light.html",
+    "linkDark": "aleric/portfolio-slider-elegant-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-slider-elegant-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-9.jpg",
+    "title": "Creative Thumb",
+    "linkLight": "aleric/portfolio-creative-thumb-slider.html",
+    "linkDark": "aleric-rtl/portfolio-creative-thumb-slider.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-10.jpg",
+    "title": "Portfolio Horizontal",
+    "linkLight": "aleric/portfolio-horizontal.html",
+    "linkDark": "aleric-rtl/portfolio-horizontal.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-11.jpg",
+    "title": "Interactive With Hover",
+    "linkLight": "aleric/portfolio-interactive-with-hover.html",
+    "linkDark": "aleric-rtl/portfolio-interactive-with-hover.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-12.jpg",
+    "title": "Interactive With Scroll",
+    "linkLight": "aleric/portfolio-interactive-with-scroll.html",
+    "linkDark": "aleric-rtl/portfolio-interactive-with-scroll.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-14.jpg",
+    "title": "Portfolio Paralax",
+    "linkLight": "aleric/portfolio-paralax-slider.html",
+    "linkDark": "aleric-rtl/portfolio-paralax-slider.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-15.jpg",
+    "title": "Portfolio Perspective",
+    "linkLight": "aleric/portfolio-perspective-slider-light.html",
+    "linkDark": "aleric/portfolio-perspective-slider-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-perspective-slider-dark.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-16.jpg",
+    "title": "Portfolio Revealing",
+    "linkLight": "aleric/portfolio-revealing-slider.html",
+    "linkDark": "aleric-rtl/portfolio-revealing-slider.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-17.jpg",
+    "title": "Swipe Gallery",
+    "linkLight": "aleric/portfolio-swipe-gallery.html",
+    "linkDark": "aleric-rtl/portfolio-swipe-gallery.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-1.jpg",
+    "title": "Showcase Full",
+    "linkLight": "aleric/portfolio-showcase-full-light.html",
+    "linkDark": "aleric/portfolio-showcase-full-dark.html",
+    "linkRTL": "aleric-rtl/portfolio-showcase-full-light.html",
+    "category": "General"
+  },
+  {
+    "isNew": false,
+    "image": "images/showcase-18.jpg",
+    "title": "Brand Showcase",
+    "linkLight": "aleric/brand-showcase-light.html",
+    "linkDark": "aleric/brand-showcase-dark.html",
+    "linkRTL": "aleric-rtl/brand-showcase-light.html",
+    "category": "General"
+  }
+]
