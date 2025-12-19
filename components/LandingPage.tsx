@@ -413,18 +413,7 @@ export default function LandingPage() {
                                  <div className="tp-build-thumb anim-zoomin">
                                     <img src="images/bg_1.png" alt="" />
                                  </div>
-                                 <div className="tp-build-content">
-                                    <h3 className="tp-build-main-title mb-50">System Architecture<br /> Design</h3>
-                                    <span className="tp-build-icon">
-                                       <svg width="27" height="40" viewBox="0 0 27 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M13.3203 20.0079C13.3203 16.3265 16.3089 13.3379 19.9903 13.3379C23.6716 13.3379 26.6603 16.3265 26.6603 20.0079C26.6603 23.6892 23.6716 26.6779 19.9903 26.6779C16.3089 26.6779 13.3203 23.6892 13.3203 20.0079Z" fill="#1ABCFE"></path>
-                                          <path d="M0 33.3301C0 29.6488 2.98863 26.6602 6.66998 26.6602H13.34V33.3301C13.34 37.0115 10.3513 40.0001 6.66998 40.0001C2.98863 40.0001 0 37.0115 0 33.3301Z" fill="#0ACF83"></path>
-                                          <path d="M13.3203 0.0197934V13.34H19.9903C23.6716 13.34 26.6603 10.3513 26.6603 6.66998C26.6603 2.98863 23.6716 0 19.9903 0H13.3203V0.0197934Z" fill="#FF7262"></path>
-                                          <path d="M0 6.68935C0 10.3707 2.98863 13.3593 6.66998 13.3593H13.34V0.0391602H6.66998C2.98863 0.019368 0 3.00799 0 6.68935Z" fill="#F24E1E"></path>
-                                          <path d="M0 20.0097C0 23.691 2.98863 26.6796 6.66998 26.6796H13.34V13.3595H6.66998C2.98863 13.3397 0 16.3283 0 20.0097Z" fill="#A259FF"></path>
-                                       </svg>
-                                    </span>
-                                 </div>
+                                
                               </div>
                            </div>
                            <div className="col-lg-4 col-md-6">
@@ -439,11 +428,7 @@ export default function LandingPage() {
                                  <div className="tp-build-thumb anim-zoomin">
                                     <img src="images/bg-3.png" alt="" />
                                  </div>
-                                 <div className="tp-build-content">
-                                    <span className="tp-build-subtitle d-inline-block mb-10">Language</span>
-                                    <h3 className="tp-build-main-title mb-10">Scalable <br /> Codebase</h3>
-                                    <img className="tp-build-langguage" src="images/langguag.png" alt="" />
-                                 </div>
+                                 
                               </div>
                            </div>
                            <div className="col-lg-4 col-md-6">
@@ -451,21 +436,12 @@ export default function LandingPage() {
                                  <div className="tp-build-thumb anim-zoomin">
                                     <img src="images/bg-4.png" alt="" />
                                  </div>
-                                 <div className="tp-build-content text-center">
-                                    <span className="tp-build-subtitle d-inline-block mb-10">text animations</span>
-                                    <h3 className="tp-build-main-title mb-30">Modern Tech<br /> Stack</h3>
-                                    <img src="images/shape_3.png" alt="" />
-                                 </div>
                               </div>
                            </div>
                            <div className="col-lg-4 col-md-6">
                               <div className="tp-build-item anim-zoomin-wrap p-relative mb-25 text-center">
                                  <div className="tp-build-thumb anim-zoomin">
                                     <img src="images/bg-5.png" alt="" />
-                                 </div>
-                                 <div className="tp-build-content text-center">
-                                    <span className="tp-build-subtitle d-inline-block mb-10">popup</span>
-                                    <h3 className="tp-build-main-title mb-30">High Performance<br /> Solutions</h3>
                                  </div>
                               </div>
                            </div>
