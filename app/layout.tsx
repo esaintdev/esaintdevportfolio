@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aleric - Digital Agency & Creative Portfolio",
-  description: "Aleric - Digital Agency & Creative Portfolio HTML Template",
+  title: "Esaint Mjay - Digital Agency & Creative Portfolio",
+  description: "Esaint Mjay - Digital Agency & Creative Portfolio HTML Template",
 };
 
 export default function RootLayout({

@@ -60,12 +60,16 @@ export default function LandingPage() {
             </svg>
             <div className="loader-wrap-heading">
                <div className="load-text">
-                  <span>A</span>
-                  <span>L</span>
                   <span>E</span>
-                  <span>R</span>
+                  <span>s</span>
+                  <span>a</span>
                   <span>i</span>
-                  <span>C</span>
+                  <span>n</span>
+                  <span>t</span>
+                  <span className="ms-3">M</span>
+                  <span>j</span>
+                  <span>a</span>
+                  <span>y</span>
                </div>
             </div>
          </div>
@@ -90,7 +94,7 @@ export default function LandingPage() {
                      <div className="row">
                         <div className="col-lg-12">
                            <div className="tp-header-top-content text-center">
-                              <p><span>Limited offer</span> <img src="images/header-fire-icon.svg" alt="" /> Aleric for $12 only, don’t miss</p>
+                              <p><span>Limited offer</span> <img src="images/header-fire-icon.svg" alt="" /> Esaint Mjay for $12 only, don’t miss</p>
                            </div>
                         </div>
                      </div>
@@ -188,7 +192,7 @@ export default function LandingPage() {
                                  <div className="tp-hero-content text-center">
                                     <h2 className="tp-hero-title tp-fade-anim" data-delay=".5">
                                        Launch your agency <br />
-                                       with Aleric - <span>HTML</span> <br />
+                                       with Esaint Mjay - <span>HTML</span> <br />
                                        Template
                                     </h2>
                                     <div className="tp-fade-anim" data-delay=".7">
