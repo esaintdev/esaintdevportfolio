@@ -174,13 +174,7 @@
     });
 
 
-    let smoother = ScrollSmoother.create({
-        smooth: 2,
-        effects: true,
-        smoothTouch: 0.1,
-        normalizeScroll: false,
-        ignoreMobileResize: true,
-    });
+    // ScrollSmoother initialization removed - moved to components/SmoothScroll.tsx
 
 
     $('.grid').imagesLoaded(function () {

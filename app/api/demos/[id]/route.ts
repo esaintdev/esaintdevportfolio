@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
+import { verifyToken } from "@/lib/session";
+import { cookies } from "next/headers";
 
 export async function GET(
     request: Request,
@@ -26,14 +28,16 @@ export async function DELETE(
 ) {
     const id = (await params).id
     try {
-        const supabase = await createClient();
+        // Authenticate using custom session
+        const cookieStore = await cookies();
+        const token = cookieStore.get("admin_session")?.value;
+        const payload = token ? await verifyToken(token) : null;
 
-        // Check session
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) {
+        if (!payload) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
+        const supabase = await createClient();
         const { error } = await supabase
             .from('demos')
             .delete()
@@ -57,14 +61,16 @@ export async function PUT(
 ) {
     const id = (await params).id
     try {
-        const supabase = await createClient();
+        // Authenticate using custom session
+        const cookieStore = await cookies();
+        const token = cookieStore.get("admin_session")?.value;
+        const payload = token ? await verifyToken(token) : null;
 
-        // Check session
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) {
+        if (!payload) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
+        const supabase = await createClient();
         const body = await request.json();
         const { data: demo, error } = await supabase
             .from('demos')

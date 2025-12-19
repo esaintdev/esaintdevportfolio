@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useEffect } from 'react';
+import Link from 'next/link';
+import Script from 'next/script';
 import DemoSection from './DemoSection';
+import FeatureArea from './FeatureArea';
+import FAQArea from './FAQArea';
+import Header from './Header';
+import HeroMain from './HeroMain';
+import TemplateArea from './TemplateArea';
 
 export default function LandingPage() {
    useEffect(() => {
@@ -85,309 +92,37 @@ export default function LandingPage() {
          </div>
          {/* back to top end */}
 
-         <header>
-
-            {/* header area start */}
-            <div className="tp-header-area pre-header header-transparent mt-10">
-               <div className="tp-header-top-area d-none">
-                  <div className="container">
-                     <div className="row">
-                        <div className="col-lg-12">
-                           <div className="tp-header-top-content text-center">
-                              <p><span>Limited offer</span> <img src="images/header-fire-icon.svg" alt="" /> Esaint Mjay for $12 only, don’t miss</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div className="tp-header-box">
-                  <div className="container container-1730">
-                     <div className="row align-items-center">
-                        <div className="col-lg-3 col-6">
-                           <div className="tp-header-logo">
-                              <a href="index.html"><img data-width="140" src="images/logo.png" alt="" /></a>
-                           </div>
-                        </div>
-                        <div className="col-lg-6 d-none d-lg-block">
-                           <div className="tp-header-menu text-center">
-                              <nav>
-                                 <ul>
-                                    <li className="smooth"><a href="#demo">Demos</a></li>
-                                    <li className="smooth"><a href="#feature">Features</a></li>
-                                    <li><a href="https://help.aqlova.com/login" target="_blank">Support</a></li>
-                                    <li><a href="https://html.aqlova.com/docs/aleric-html-docs/" target="_blank">Documentation</a>
-                                    </li>
-                                 </ul>
-                              </nav>
-                           </div>
-                        </div>
-                        <div className="col-lg-3 col-6">
-                           <div className="tp-header-btn text-end">
-                              <a className="tp-btn-yellow btn-white btn-bdr d-inline-flex align-items-center" href="https://themeforest.net/checkout/from_item/59505968?license=regular" target="_blank">
-                                 <i>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
-                                       <path fillRule="evenodd" clipRule="evenodd" d="M15.3704 4.74025L12.7193 0.321646C12.531 0.00792557 12.1236 -0.0937023 11.8099 0.0945302C11.4962 0.282763 11.3946 0.690158 11.5828 1.00388L14.234 5.42248C14.4222 5.7362 14.8296 5.83783 15.1433 5.6496C15.457 5.46137 15.5587 5.05397 15.3704 4.74025Z" fill="black"></path>
-                                       <path fillRule="evenodd" clipRule="evenodd" d="M4.76615 5.42248L7.41731 1.00388C7.60555 0.690158 7.50392 0.282763 7.1902 0.0945302C6.87648 -0.0937023 6.46908 0.00792557 6.28085 0.321646L3.62969 4.74025C3.44145 5.05397 3.54308 5.46137 3.8568 5.6496C4.17052 5.83783 4.57792 5.7362 4.76615 5.42248Z" fill="black"></path>
-                                       <path fillRule="evenodd" clipRule="evenodd" d="M18.1067 5.1883C18.1386 4.99654 18.0838 4.80035 17.9583 4.65189C17.8319 4.5043 17.6472 4.41858 17.4528 4.41858H1.54582C1.3514 4.41858 1.1667 4.5043 1.04033 4.65189C0.91484 4.80035 0.860049 4.99654 0.891863 5.1883C0.891863 5.1883 1.79503 10.7063 2.23954 13.4272C2.43219 14.6026 3.44758 15.4651 4.63796 15.4651H14.3607C15.551 15.4651 16.5664 14.6026 16.7591 13.4272L18.1067 5.1883ZM8.83651 8.1744V11.7093C8.83651 12.0751 9.13344 12.3721 9.4993 12.3721C9.86516 12.3721 10.1621 12.0751 10.1621 11.7093V8.1744C10.1621 7.80854 9.86516 7.51161 9.4993 7.51161C9.13344 7.51161 8.83651 7.80854 8.83651 8.1744ZM12.3714 8.1744V11.7093C12.3714 12.0751 12.6683 12.3721 13.0342 12.3721C13.4 12.3721 13.697 12.0751 13.697 11.7093V8.1744C13.697 7.80854 13.4 7.51161 13.0342 7.51161C12.6683 7.51161 12.3714 7.80854 12.3714 8.1744ZM5.30163 8.1744V11.7093C5.30163 12.0751 5.59856 12.3721 5.96442 12.3721C6.33028 12.3721 6.62721 12.0751 6.62721 11.7093V8.1744C6.62721 7.80854 6.33028 7.51161 5.96442 7.51161C5.59856 7.51161 5.30163 7.80854 5.30163 8.1744Z" fill="black"></path>
-                                       <path fillRule="evenodd" clipRule="evenodd" d="M18.3372 4.41858H0.662791C0.29693 4.41858 0 4.71551 0 5.08137C0 5.44724 0.29693 5.74416 0.662791 5.74416H18.3372C18.7031 5.74416 19 5.44724 19 5.08137C19 4.71551 18.7031 4.41858 18.3372 4.41858Z" fill="black"></path>
-                                    </svg>
-                                 </i>
-                                 <span>
-                                    <span className="text-1">Buy Now</span>
-                                    <span className="text-2">Buy Now</span>
-                                 </span>
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            {/* header area end */}
-
-         </header>
+         <Header />
 
          <div id="smooth-wrapper">
             <div id="smooth-content">
 
                <main>
-                  <div className="tp-template-area tp-template-content-wrap tp-template-bg p-relative tp-bg-black fix">
-                     <div className="tp-template-inner">
-                        <img className="images w-100" src="images/bg_3.png" alt="" />
-                        <div className="tp-template-content">
-                           <div className="tp-template-header">
-                              <div className="tp-template-section-title-wrapper">
-                                 <div className="tp-template-subtitle-wrapper">
-                                    <span className="tp-template-subtitle d-inline-block mb-20">Awesome inner pages</span>
-                                 </div>
-                                 <div className="tp-template-title-wrapper mb-35">
-                                    <h2 className="tp-section-title tp-section-title-white">Build stunning <br />
-                                       sites with awesome <br />
-                                       inner pages
-                                    </h2>
-                                 </div>
-                              </div>
-                              <div className="tp-template-btn-wrapper">
-                                 <a className="tp-btn-yellow d-inline-flex align-items-center" href="aleric/index.html" target="_blank">
-                                    <span>
-                                       <span className="text-1">Explore Demos</span>
-                                       <span className="text-2">Explore Demos</span>
-                                    </span>
-                                 </a>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  <TemplateArea />
 
                   {/* hero area start */}
-                  <div className="tp-hero-area tp-hero-bg p-relative fix include-bg pb-50" data-bg-color="#010103">
-                     <div className="tp-hero-noise">
-                        <img src="images/noise.png" alt="" />
-                     </div>
-                     <div className="container-fluid z-index-1 p-0">
-                        <div className="row">
-                           <div className="col-lg-12">
-                              <div className="tp-hero-wrapper pt-200 pb-80">
-                                 <div className="tp-hero-content text-center">
-                                    <h2 className="tp-hero-title tp-fade-anim" data-delay=".5">
-                                       Launch your agency <br />
-                                       with Esaint Mjay - <span>HTML</span> <br />
-                                       Template
-                                    </h2>
-                                    <div className="tp-fade-anim" data-delay=".7">
-                                       <p>Build Creative Websites with Cunnet Flexbox</p>
-                                    </div>
-                                 </div>
-                                 <div className="tp-hero-btn-box text-center">
-                                    <div className="tp-fade-anim smooth" data-delay=".3" data-ease="bounce" data-fade-from="top" data-duration="1.2">
-                                       <a className="tp-btn-yellow btn-orange btn-bdr d-inline-flex align-items-center" href="https://themeforest.net/checkout/from_item/59505968?license=regular" target="_blank">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="21" height="12" viewBox="0 0 21 12" fill="none">
-                                             <path d="M1 5.25C0.585786 5.25 0.25 5.58579 0.25 6C0.25 6.41421 0.585786 6.75 1 6.75L1 6L1 5.25ZM20.5303 6.53033C20.8232 6.23744 20.8232 5.76256 20.5303 5.46967L15.7574 0.696698C15.4645 0.403804 14.9896 0.403805 14.6967 0.696698C14.4038 0.989591 14.4038 1.46446 14.6967 1.75736L18.9393 6L14.6967 10.2426C14.4038 10.5355 14.4038 11.0104 14.6967 11.3033C14.9896 11.5962 15.4645 11.5962 15.7574 11.3033L20.5303 6.53033ZM1 6L1 6.75L20 6.75L20 6L20 5.25L1 5.25L1 6Z" fill="white"></path>
-                                          </svg>
-                                          <span>
-                                             <span className="text-1">Perchase Now</span>
-                                             <span className="text-2">Perchase Now</span>
-                                          </span>
-                                       </a>
-                                    </div>
-                                    <div className="tp-fade-anim smooth" data-delay=".5" data-ease="bounce" data-fade-from="top" data-duration="1.2">
-                                       <a className="tp-btn-yellow btn-gray btn-bdr border-style d-inline-flex align-items-center" href="#demo">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                             <path d="M8.835 16.67C13.1622 16.67 16.67 13.1621 16.67 8.83497C16.67 4.50782 13.1622 0.999969 8.835 0.999969C4.50785 0.999969 1 4.50782 1 8.83497C1 13.1621 4.50785 16.67 8.835 16.67Z" stroke="#F3F1F2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                             <path d="M8.83594 5.70093V11.9689" stroke="#F3F1F2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                             <path d="M5.70117 8.83502H11.9692" stroke="#F3F1F2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                          </svg>
-                                          <span>
-                                             <span className="text-1">56+ Demos</span>
-                                             <span className="text-2">56+ Demos</span>
-                                          </span>
-                                       </a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div className="tp-hero-gallery-box">
-                           <div className="row row-cols-lg-5">
-                              <div className="col">
-                                 <div className="tp-hero-gallery-item" data-speed="0.7">
-                                    <img src="images/hero-thumb-1.png" alt="" />
-                                    <img src="images/hero-thumb-1.png" alt="" />
-                                    <img src="images/hero-thumb-1.png" alt="" />
-                                    <img src="images/hero-thumb-1.png" alt="" />
-                                    <img src="images/hero-thumb-1.png" alt="" />
-                                    <img src="images/hero-thumb-1.png" alt="" />
-                                 </div>
-                              </div>
-                              <div className="col">
-                                 <div className="tp-hero-gallery-item" data-speed="0.90">
-                                    <img src="images/hero-thumb-2.png" alt="" />
-                                    <img src="images/hero-thumb-2.png" alt="" />
-                                    <img src="images/hero-thumb-2.png" alt="" />
-                                    <img src="images/hero-thumb-2.png" alt="" />
-                                    <img src="images/hero-thumb-2.png" alt="" />
-                                    <img src="images/hero-thumb-2.png" alt="" />
-                                 </div>
-                              </div>
-                              <div className="col">
-                                 <div className="tp-hero-gallery-item" data-speed="0.7">
-                                    <img src="images/hero-thumb-3.png" alt="" />
-                                    <img src="images/hero-thumb-3.png" alt="" />
-                                    <img src="images/hero-thumb-3.png" alt="" />
-                                    <img src="images/hero-thumb-3.png" alt="" />
-                                    <img src="images/hero-thumb-3.png" alt="" />
-                                    <img src="images/hero-thumb-3.png" alt="" />
-                                 </div>
-                              </div>
-                              <div className="col">
-                                 <div className="tp-hero-gallery-item" data-speed="0.90">
-                                    <img src="images/hero-thumb-4.png" alt="" />
-                                    <img src="images/hero-thumb-4.png" alt="" />
-                                    <img src="images/hero-thumb-4.png" alt="" />
-                                    <img src="images/hero-thumb-4.png" alt="" />
-                                    <img src="images/hero-thumb-4.png" alt="" />
-                                    <img src="images/hero-thumb-4.png" alt="" />
-                                 </div>
-                              </div>
-                              <div className="col">
-                                 <div className="tp-hero-gallery-item" data-speed="0.7">
-                                    <img src="images/hero-thumb-5.png" alt="" />
-                                    <img src="images/hero-thumb-5.png" alt="" />
-                                    <img src="images/hero-thumb-5.png" alt="" />
-                                    <img src="images/hero-thumb-5.png" alt="" />
-                                    <img src="images/hero-thumb-5.png" alt="" />
-                                    <img src="images/hero-thumb-5.png" alt="" />
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  <HeroMain />
                   {/* hero area end */}
 
 
                   {/* feature-area start */}
-                  <div className="tp-feature-2-area tp-sm-pt tp-sm-pb pt-130 pb-130">
-                     <div className="container">
-                        <div className="row justify-content-center">
-                           <div className="col-xl-8">
-                              <div className="tp-feature-2-title-box text-center mb-55">
-                                 <h4 className="tp-section-title mb-15 tp-fade-anim" data-delay=".5">
-                                    <span>Core features <br /> all your website needs.</span>
-                                 </h4>
-                                 <div className="tp-fade-anim" data-delay=".7">
-                                    <p>Unlock powerful features for a stunning, <span>customizable</span> website</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div className="tp-feature-2-wrap">
-                           <div className="tp-feature-2-left">
-                              <div className="tp-feature-2-item mb-30 p-relative">
-                                 <div className="tp-feature-2-bg">
-                                    <img src="images/feature-2-1.jpg" alt="" />
-                                 </div>
-                                 <div className="tp-feature-2-content">
-                                    <span className="tp-feature-2-icon p-relative">
-                                       <img className="anim-img" src="images/feature-shape-2-1.png" alt="" />
-                                       <img src="images/feature-shape-2-2.png" alt="" />
-                                    </span>
-                                 </div>
-                              </div>
-                              <div className="tp-feature-2-item mb-30 p-relative">
-                                 <div className="tp-feature-2-bg">
-                                    <img src="images/feature-2-2.jpg" alt="" />
-                                 </div>
-                              </div>
-                           </div>
-                           <div className="tp-feature-2-middle mb-30 d-flex justify-content-center align-items-end" data-background="assets/img/feature/feature-bg-2.jpg">
-                              <div className="tp-feature-2-item d-flex h-100 flex-column justify-content-between">
-                                 <div className="tp-feature-2-middle-content text-center">
-                                    <span>Light and Dark mode</span>
-                                    <h4 className="tp-feature-2-title mb-35">Light, Dark & System Color <br /> mode browsing</h4>
-                                 </div>
-                                 <div id="image-compare" className="tp-feature-2-beforeafter p-relative text-center">
-                                    <img src="images/feature-light-img.jpg" alt="" />
-                                    <img src="images/feature-dark-img.jpg" alt="" />
-                                 </div>
-                              </div>
-                           </div>
-                           <div className="tp-feature-2-right">
-                              <div className="tp-feature-2-item mb-30">
-                                 <div className="tp-feature-2-bg">
-                                    <img src="images/feature-2-3.jpg" alt="" />
-                                 </div>
-                              </div>
-                              <div className="tp-feature-2-item mb-30">
-                                 <div className="tp-feature-2-bg p-relative">
-                                    <img className="text-img" src="images/text.png" alt="" />
-                                    <img className="gif-img" src="images/gsap.gif" alt="" />
-                                    <img src="images/feature-2-4.jpg" alt="" />
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div className="tp-feature-bottom d-flex">
-                           <div className="tp-feature-new-item d-flex justify-content-between align-items-center mb-30">
-                              <div className="tp-feature-new-content">
-                                 <h4 className="tp-feature-new-title">Optimized <br /> for fast loading.</h4>
-                                 <p>
-                                    Enjoy optimized performance with faster load <br />
-                                    times and higher speed scores.
-                                 </p>
-                                 <a href="#">
-                                    Run speed test
-                                    <span>
-                                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M1 9L9 1M9 1H1M9 1V9" stroke="#0E0F11" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                       </svg>
-                                    </span>
-                                 </a>
-                              </div>
-                              <div className="tp-feature-new-img">
-                                 <img src="images/feature-new-1.png" alt="" />
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  <FeatureArea />
                   {/* feature-area end */}
 
 
-                  <DemoSection />
+                  {/* <DemoSection /> */}
                   {/* tp-feature-area-start */}
                   <div id="feature" className="tp-feature-area tp-sm-pt tp-sm-pb tp-bg-black-2 section-meinus pt-135 pb-135">
                      <div className="container container-1230">
                         <div className="row">
                            <div className="col-12">
                               <div className="tp-feature-include-title-wrap text-center mb-75">
-                                 <span className="tp-responsive-layout-subtitle mb-15 tp-fade-anim" data-delay=".3">Features Included</span>
-                                 <h2 className="tp-section-title tp-section-title-60 text-lts tp-section-title-white mb-40 tp-fade-anim" data-delay=".5">Top-Notch <br /> Features Included</h2>
+                                 <span className="tp-responsive-layout-subtitle mb-15 tp-fade-anim" data-delay=".3">What I Deliver</span>
+                                 <h2 className="tp-section-title tp-section-title-60 text-lts tp-section-title-white mb-40 tp-fade-anim" data-delay=".5">Major Projects <br /> & Capabilities</h2>
                                  <div className="tp-feature-include-tag tp-fade-anim" data-delay=".7">
-                                    <span>Creative Animetion</span>
-                                    <span>56+Demos</span>
-                                    <span>600+ Section</span>
+                                    <span>Web Development</span>
+                                    <span>Automation</span>
+                                    <span>Modern E-commerce</span>
                                  </div>
                               </div>
                               <div className="tp-feature-include-wrap">
@@ -404,7 +139,7 @@ export default function LandingPage() {
                                                 <path opacity="0.4" d="M37.2139 38.352H37.2353" stroke="white" strokeOpacity="0.6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                                              </svg>
                                           </span>
-                                          <p>Fully responsive <br /> layouts</p>
+                                          <p>Full Stack <br /> Projects</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -428,7 +163,7 @@ export default function LandingPage() {
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M36.4143 37.0039C36.1391 37.0039 35.916 37.227 35.916 37.5022C35.916 37.7774 36.1391 38.0005 36.4143 38.0005H38.4074C38.6826 38.0005 38.9057 37.7774 38.9057 37.5022C38.9057 37.227 38.6826 37.0039 38.4074 37.0039H36.4143Z" fill="white" fillOpacity="0.6"></path>
                                              </svg>
                                           </span>
-                                          <p>Header and <br /> Footer</p>
+                                          <p>Mobile <br /> Applications</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -441,7 +176,7 @@ export default function LandingPage() {
                                                 <path d="M37.0774 17.3047H12.9223C12.3019 17.3047 11.7988 17.8077 11.7988 18.4281C11.7988 19.0486 12.3019 19.5516 12.9223 19.5516H37.0774C37.6979 19.5516 38.2009 19.0486 38.2009 18.4281C38.2009 17.8077 37.6979 17.3047 37.0774 17.3047Z" fill="white" fillOpacity="0.6"></path>
                                              </svg>
                                           </span>
-                                          <p>Pre Built<br /> Offcanvas</p>
+                                          <p>API <br /> Integrations</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -469,7 +204,7 @@ export default function LandingPage() {
                                                 </g>
                                              </svg>
                                           </span>
-                                          <p>Creative <br /> sliders</p>
+                                          <p>UI/UX <br /> Design</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -479,7 +214,7 @@ export default function LandingPage() {
                                                 <path d="M38.7607 33.6738C39.7234 33.6736 40.6667 33.9466 41.4805 34.4609C42.1926 34.9111 42.78 35.5303 43.1924 36.2607L43.3584 36.5801C43.7196 37.3411 43.8856 38.178 43.8438 39.0156L43.8125 39.375C43.711 40.2111 43.4039 41.0069 42.9209 41.6924L42.7031 41.9795C42.1704 42.632 41.4856 43.1407 40.7109 43.4619L40.374 43.5879C39.5751 43.8547 38.7238 43.9189 37.8975 43.7764L37.5449 43.7021C36.727 43.5006 35.9738 43.0994 35.3516 42.5371L35.0928 42.2861C34.426 41.5918 33.9699 40.7225 33.7773 39.7793L33.7529 39.6592H30.3809C30.1725 39.6592 29.9713 39.587 29.8115 39.4561L29.7461 39.3965C29.5778 39.2282 29.4834 38.9998 29.4834 38.7617C29.4834 38.5535 29.5557 38.353 29.6865 38.1934L29.7461 38.127C29.9144 37.9588 30.1429 37.8643 30.3809 37.8643H33.7529L33.7773 37.7441C33.9972 36.6672 34.5594 35.6926 35.377 34.9639L35.5439 34.8213C36.3954 34.1259 37.4476 33.7261 38.542 33.6787L38.7607 33.6738ZM40.0215 35.7197C39.4951 35.5017 38.9222 35.4249 38.3594 35.4941L38.1191 35.5322C37.4804 35.6593 36.8931 35.9731 36.4326 36.4336C36.0297 36.8366 35.7393 37.3363 35.5879 37.8828L35.5312 38.1191C35.4201 38.6781 35.4561 39.2554 35.6338 39.7939L35.7188 40.0225C35.968 40.624 36.3902 41.1382 36.9316 41.5C37.473 41.8618 38.1096 42.0546 38.7607 42.0547C39.5793 42.0547 40.3667 41.7499 40.9707 41.2031L41.0898 41.0898C41.7071 40.4724 42.0537 39.6348 42.0537 38.7617C42.0537 38.1919 41.9063 37.6331 41.627 37.1396L41.499 36.9326C41.1824 36.4587 40.7487 36.0764 40.2422 35.8213L40.0215 35.7197ZM38.7607 4.34082H42.9512C43.1596 4.34082 43.3607 4.41294 43.5205 4.54395L43.5859 4.60352C43.7543 4.77185 43.8486 5.00021 43.8486 5.23828C43.8486 5.44648 43.7763 5.64698 43.6455 5.80664L43.5859 5.87305C43.4176 6.04126 43.1891 6.13574 42.9512 6.13574H38.7607C36.5551 6.1286 34.389 6.70068 32.4775 7.79102L32.0986 8.01562C30.2218 9.17506 28.6846 10.8061 27.6377 12.7422L27.4346 13.1328L18.1699 31.665V31.666C17.0512 33.923 15.3606 35.8438 13.2705 37.2393L12.8477 37.5107C10.5622 38.9236 7.9261 39.6679 5.23926 39.6592H1.04883C0.840424 39.6592 0.639252 39.5871 0.479492 39.4561L0.414062 39.3965C0.245736 39.2282 0.151367 38.9998 0.151367 38.7617C0.15141 38.5535 0.223717 38.353 0.354492 38.1934L0.414062 38.127C0.582372 37.9587 0.810869 37.8643 1.04883 37.8643H5.23926V37.8633C7.44489 37.8704 9.61102 37.2993 11.5225 36.209L11.9014 35.9844C13.9033 34.7476 15.5182 32.974 16.5645 30.8662L16.5654 30.8672L25.8301 12.335V12.334C26.9486 10.0769 28.6394 8.15622 30.7295 6.76074L31.1523 6.48828C33.2951 5.16363 35.7458 4.42717 38.2578 4.34766L38.7607 4.34082ZM19.9053 37.8643H24.0947C24.303 37.8643 24.5043 37.9365 24.6641 38.0674L24.7295 38.127C24.8978 38.2952 24.9931 38.5237 24.9932 38.7617C24.9932 38.9702 24.9201 39.1713 24.7891 39.3311L24.7295 39.3965C24.5612 39.5648 24.3327 39.6592 24.0947 39.6592H19.9053C19.6969 39.6592 19.4957 39.587 19.3359 39.4561L19.2705 39.3965C19.1022 39.2282 19.0068 38.9998 19.0068 38.7617C19.0069 38.5535 19.0801 38.353 19.2109 38.1934L19.2705 38.127C19.4388 37.9588 19.6674 37.8643 19.9053 37.8643ZM3.62598 0.412109C4.42489 0.14533 5.27618 0.0811184 6.10254 0.223633L6.45508 0.297852C7.27297 0.499428 8.02615 0.900645 8.64844 1.46289L8.90723 1.71387C9.57402 2.40819 10.0301 3.27747 10.2227 4.2207L10.2471 4.34082H13.6191C13.8275 4.34082 14.0287 4.41296 14.1885 4.54395L14.2539 4.60352C14.4222 4.77185 14.5166 5.00022 14.5166 5.23828C14.5166 5.44649 14.4443 5.64697 14.3135 5.80664L14.2539 5.87305C14.0856 6.04124 13.8571 6.13574 13.6191 6.13574H10.2471L10.2227 6.25586C10.0028 7.33279 9.44062 8.30739 8.62305 9.03613L8.45605 9.17871C7.54797 9.92034 6.41167 10.3258 5.23926 10.3262L4.87891 10.3135C4.04242 10.2543 3.23152 9.9891 2.51953 9.53906C1.80741 9.08889 1.21995 8.46969 0.807617 7.73926L0.641602 7.41992C0.280399 6.65894 0.114428 5.82198 0.15625 4.98438L0.1875 4.625C0.288995 3.78886 0.596112 2.9931 1.0791 2.30762L1.29688 2.02051C1.82956 1.368 2.51443 0.859301 3.28906 0.538086L3.62598 0.412109ZM5.23926 1.94531C4.36597 1.94531 3.52766 2.29262 2.91016 2.91016C2.29293 3.52764 1.94629 4.36517 1.94629 5.23828C1.94632 5.80808 2.09372 6.36687 2.37305 6.86035L2.50098 7.06738C2.81761 7.54129 3.25125 7.92356 3.75781 8.17871L3.97852 8.28027C4.50494 8.49833 5.07782 8.57506 5.64062 8.50586L5.88086 8.46777C6.43969 8.35661 6.95917 8.10264 7.38867 7.73242L7.56738 7.56641C7.9703 7.16342 8.26071 6.66374 8.41211 6.11719L8.46875 5.88086C8.57992 5.32193 8.54393 4.74462 8.36621 4.20605L8.28125 3.97754C8.06316 3.45113 7.71254 2.99159 7.26562 2.64258L7.06836 2.5C6.52698 2.13825 5.89036 1.94539 5.23926 1.94531ZM19.9053 4.34082H24.0947C24.3031 4.34082 24.5043 4.413 24.6641 4.54395L24.7295 4.60352C24.8978 4.77185 24.9932 5.00021 24.9932 5.23828C24.9931 5.44652 24.9199 5.64696 24.7891 5.80664L24.7295 5.87305C24.5612 6.04121 24.3326 6.13574 24.0947 6.13574H19.9053C19.697 6.13574 19.4956 6.06347 19.3359 5.93262L19.2705 5.87305C19.1022 5.70476 19.0069 5.47628 19.0068 5.23828C19.0068 5.02982 19.0799 4.82873 19.2109 4.66895L19.2705 4.60352C19.4388 4.43524 19.6673 4.34082 19.9053 4.34082Z" fill="white" fillOpacity="0.6" stroke="black" strokeWidth="0.3"></path>
                                              </svg>
                                           </span>
-                                          <p>Animation Builder (GSAP)</p>
+                                          <p>Cloud Integration <br /> (AWS/GCP)</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -495,7 +230,7 @@ export default function LandingPage() {
                                                 </g>
                                              </svg>
                                           </span>
-                                          <p>CSS with <br /> superpowers</p>
+                                          <p>SEO <br /> Optimization</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -523,7 +258,7 @@ export default function LandingPage() {
                                                 <rect x="43" y="31" width="6" height="1" fill="white" fillOpacity="0.7"></rect>
                                              </svg>
                                           </span>
-                                          <p>Unique <br /> Mega Menu</p>
+                                          <p>Database <br /> Architecture</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -538,7 +273,7 @@ export default function LandingPage() {
                                                 <path d="M47.4229 47.4213C49.5278 45.3165 49.5278 41.9039 47.4229 39.799L40.2933 32.6693C38.5236 30.8994 36.2694 29.6932 33.8151 29.2027L28.0527 28.0508L29.2045 33.8133C29.6951 36.2675 30.9014 38.5217 32.6711 40.2916L39.8007 47.4213C41.9056 49.5262 45.3181 49.5262 47.4229 47.4213Z" stroke="white" strokeOpacity="0.6" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path>
                                              </svg>
                                           </span>
-                                          <p> Unique blog <br /> styles</p>
+                                          <p>Performance <br /> Tuning</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -552,7 +287,7 @@ export default function LandingPage() {
                                                 <path d="M11.2598 13.4141C11.2599 11.2566 13.7862 10.1427 15.376 11.5068L15.5273 11.6465L21.7881 17.9072L21.96 18.0967C22.7074 19.0131 22.7073 20.3364 21.96 21.2529L21.7881 21.4424L15.5273 27.7031C13.9524 29.278 11.2598 28.1628 11.2598 25.9355V22.2598H4C2.61942 22.2598 1.50021 21.1403 1.5 19.7598V19.5908C1.5 18.2101 2.61929 17.0908 4 17.0908H11.2598V13.4141Z" fill="#9D9C9F" stroke="#09080E" strokeWidth="3"></path>
                                              </svg>
                                           </span>
-                                          <p>Unique <br /> Archive Page</p>
+                                          <p>Security <br /> Audits</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -564,7 +299,7 @@ export default function LandingPage() {
                                                 <path d="M24.6466 23.8478C26.7585 23.8478 28.4865 22.13 28.4865 20.0079C28.4865 17.8858 26.7686 16.168 24.6466 16.168C22.5245 16.168 20.8066 17.8858 20.8066 20.0079C20.8066 22.13 22.5245 23.8478 24.6466 23.8478ZM24.6466 17.3907C26.0916 17.3907 27.2638 18.5629 27.2638 20.0079C27.2638 21.4529 26.0916 22.6251 24.6466 22.6251C23.2015 22.6251 22.0294 21.4529 22.0294 20.0079C22.0294 18.5629 23.2015 17.3907 24.6466 17.3907Z" fill="white" fillOpacity="0.6"></path>
                                              </svg>
                                           </span>
-                                          <p>Powerful marketing <br /> popup</p>
+                                          <p>Analytics <br /> Integration</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -582,7 +317,7 @@ export default function LandingPage() {
                                                 <path d="M19.0011 37.8598C18.6855 37.8598 18.4297 37.604 18.4297 37.2883V0.717898C18.4297 0.402363 18.6855 0.146484 19.0011 0.146484C29.3987 0.146484 37.8577 8.60557 37.8577 19.0031C37.8577 29.4007 29.3987 37.8598 19.0011 37.8598ZM19.5725 1.29845V36.7079C29.0763 36.4049 36.7149 28.5792 36.7149 19.0031C36.7149 9.42704 29.0763 1.6013 19.5725 1.29845Z" fill="white" fillOpacity="0.6"></path>
                                              </svg>
                                           </span>
-                                          <p>Dark and<br /> Light Version</p>
+                                          <p>PWA <br /> Development</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -595,7 +330,7 @@ export default function LandingPage() {
                                                 <path d="M41.1795 13.6426C40.9777 13.6426 40.7842 13.7227 40.6416 13.8654C40.4989 14.0081 40.4188 14.2016 40.4188 14.4033V21.1405C39.5487 21.3237 38.768 21.8006 38.2078 22.4911C37.6476 23.1817 37.3418 24.0439 37.3418 24.9331C37.3418 25.8223 37.6476 26.6845 38.2078 27.375C38.768 28.0656 39.5487 28.5424 40.4188 28.7257V30.5312C40.4188 30.7329 40.4989 30.9264 40.6416 31.0691C40.7842 31.2118 40.9777 31.2919 41.1795 31.2919C41.3812 31.2919 41.5747 31.2118 41.7174 31.0691C41.86 30.9264 41.9402 30.7329 41.9402 30.5312V28.7389C42.8232 28.5674 43.619 28.0942 44.1912 27.4001C44.7635 26.7061 45.0764 25.8346 45.0764 24.9351C45.0764 24.0356 44.7635 23.1641 44.1912 22.4701C43.619 21.7761 42.8232 21.3028 41.9402 21.1314V14.4033C41.9402 14.2016 41.86 14.0081 41.7174 13.8654C41.5747 13.7227 41.3812 13.6426 41.1795 13.6426ZM43.5691 24.9331C43.5691 25.3987 43.4311 25.8539 43.1724 26.241C42.9137 26.6282 42.546 26.93 42.1159 27.1081C41.6857 27.2863 41.2124 27.333 40.7557 27.2421C40.299 27.1513 39.8796 26.9271 39.5503 26.5978C39.2211 26.2686 38.9969 25.8491 38.9061 25.3924C38.8152 24.9357 38.8619 24.4623 39.04 24.0322C39.2182 23.602 39.5199 23.2343 39.9071 22.9756C40.2942 22.7169 40.7494 22.5788 41.215 22.5788C41.8392 22.5794 42.4376 22.8276 42.879 23.269C43.3204 23.7104 43.5686 24.3089 43.5691 24.9331Z" fill="white" fillOpacity="0.2"></path>
                                              </svg>
                                           </span>
-                                          <p>Smooth<br /> Scrolling</p>
+                                          <p>Custom <br /> Tooling</p>
                                        </div>
                                     </div>
                                     <div className="col">
@@ -664,9 +399,8 @@ export default function LandingPage() {
                         <div className="row align-items-end">
                            <div className="col-lg-8">
                               <div className="tp-build-title-wrap mb-85">
-                                 <span className="tp-responsive-layout-subtitle mb-25 tp-fade-anim" data-delay=".3">Build
-                                    Beautiful Website</span>
-                                 <h2 className="tp-section-title tp-section-title-120 tp-section-title-white tp-fade-anim" data-delay=".5">All the tools you need.</h2>
+                                 <span className="tp-responsive-layout-subtitle mb-25 tp-fade-anim" data-delay=".3">Let's Build Together</span>
+                                 <h2 className="tp-section-title tp-section-title-120 tp-section-title-white tp-fade-anim" data-delay=".5">Start Your Next<br /> Project with Best Tools.</h2>
                               </div>
                            </div>
                            <div className="col-lg-4 col-md-6">
@@ -680,7 +414,7 @@ export default function LandingPage() {
                                     <img src="images/bg_1.png" alt="" />
                                  </div>
                                  <div className="tp-build-content">
-                                    <h3 className="tp-build-main-title mb-50">Theme’s Figma<br /> design source files</h3>
+                                    <h3 className="tp-build-main-title mb-50">System Architecture<br /> Design</h3>
                                     <span className="tp-build-icon">
                                        <svg width="27" height="40" viewBox="0 0 27 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                           <path d="M13.3203 20.0079C13.3203 16.3265 16.3089 13.3379 19.9903 13.3379C23.6716 13.3379 26.6603 16.3265 26.6603 20.0079C26.6603 23.6892 23.6716 26.6779 19.9903 26.6779C16.3089 26.6779 13.3203 23.6892 13.3203 20.0079Z" fill="#1ABCFE"></path>
@@ -707,7 +441,7 @@ export default function LandingPage() {
                                  </div>
                                  <div className="tp-build-content">
                                     <span className="tp-build-subtitle d-inline-block mb-10">Language</span>
-                                    <h3 className="tp-build-main-title mb-10">RTL Supported <br /> Ready</h3>
+                                    <h3 className="tp-build-main-title mb-10">Scalable <br /> Codebase</h3>
                                     <img className="tp-build-langguage" src="images/langguag.png" alt="" />
                                  </div>
                               </div>
@@ -719,7 +453,7 @@ export default function LandingPage() {
                                  </div>
                                  <div className="tp-build-content text-center">
                                     <span className="tp-build-subtitle d-inline-block mb-10">text animations</span>
-                                    <h3 className="tp-build-main-title mb-30">Smooth and elegant<br /> text motions</h3>
+                                    <h3 className="tp-build-main-title mb-30">Modern Tech<br /> Stack</h3>
                                     <img src="images/shape_3.png" alt="" />
                                  </div>
                               </div>
@@ -731,7 +465,7 @@ export default function LandingPage() {
                                  </div>
                                  <div className="tp-build-content text-center">
                                     <span className="tp-build-subtitle d-inline-block mb-10">popup</span>
-                                    <h3 className="tp-build-main-title mb-30">Powerful marketing<br /> popup</h3>
+                                    <h3 className="tp-build-main-title mb-30">High Performance<br /> Solutions</h3>
                                  </div>
                               </div>
                            </div>
@@ -741,7 +475,7 @@ export default function LandingPage() {
                                     <img src="images/bg-6.png" alt="" />
                                  </div>
                                  <div className="tp-build-content text-center">
-                                    <h3 className="tp-build-main-title mb-10">Premium<br /> help and support</h3>
+                                    <h3 className="tp-build-main-title mb-10">Dedicated<br /> Support</h3>
                                  </div>
                               </div>
                            </div>
@@ -751,150 +485,7 @@ export default function LandingPage() {
                   {/* tp-build-area-end */}
 
                   {/* tp-faq-area-start */}
-                  <div className="tp-faq-area tp-sm-pt pt-130 tp-bg-black-2 section-meinus">
-                     <div className="container container-1230">
-                        <div className="row justify-content-center">
-                           <div className="col-lg-4">
-                              <div className="tp-faq-title-wrap mb-55">
-                                 <span className="tp-responsive-layout-subtitle mb-15 tp-fade-anim" data-delay=".3">Support
-                                    included.</span>
-                                 <h2 className="tp-section-title tp-section-title-60 text-lts tp-section-title-white tp-fade-anim" data-delay=".5">First class<br /> support.</h2>
-                              </div>
-                           </div>
-                           <div className="col-lg-8">
-                              <div className="tp-faq-wrapper">
-                                 <div className="accordion" id="general_faqaccordion">
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_one">
-                                          <button className="accordion-button tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_one" aria-expanded="true" aria-controls="order__collapse_one">
-                                             Why should I choose aleric?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_one" className="accordion-collapse collapse show" aria-labelledby="order_one" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>The aleric built with modern agency like HTML5, Bootstrap, SASS, GSAP etc. You can use it to build your dream website. So, don't waste your valuable time. <br /> Just <a href="#" target="_blank">click here</a> and buy the template. </p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_two">
-                                          <button className="accordion-button collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_two" aria-expanded="false" aria-controls="order__collapse_two">
-                                             Can I get free support?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_two" className="accordion-collapse collapse" aria-labelledby="order_two" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>Yes. You can get free support after purchase this template.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_three">
-                                          <button className="accordion-button collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_three" aria-expanded="false" aria-controls="order__collapse_three">
-                                             Can I get regular Updates?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_three" className="accordion-collapse collapse" aria-labelledby="order_three" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>Yes. You can get lifetime free regular updates.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_four">
-                                          <button className="accordion-button collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_four" aria-expanded="false" aria-controls="order__collapse_four">
-                                             Is it cross browser compatibility?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_four" className="accordion-collapse collapse" aria-labelledby="order_four" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>Yes. This template is fully responsive and cross browser compatibility.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_five">
-                                          <button className="accordion-button collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_five" aria-expanded="false" aria-controls="order__collapse_five">
-                                             Can I change content ?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_five" className="accordion-collapse collapse" aria-labelledby="order_five" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>Yes. You can change any content as you like. You can modify and content or design.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <span>
-                                       <i style={{ color: "#EC6FD5" }}></i>
-                                    </span>
-
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_six">
-                                          <button className="accordion-button collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_six" aria-expanded="false" aria-controls="order__collapse_six">
-                                             Am I allowed to customize the elements?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_six" className="accordion-collapse collapse" aria-labelledby="order_six" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>Absolutely! All components and elements can be edited or styled as per your project requirements.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    <div className="accordion-item mb-5">
-                                       <h2 className="accordion-header" id="order_saven">
-                                          <button className="accordion-button collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_saven" aria-expanded="false" aria-controls="order__collapse_saven">
-                                             Can I create a full-fledged project using this template?
-                                             <span className="accordion-btn">
-                                                <svg width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                   <path d="M2.7 4.93333L0.2 1.6C-0.294427 0.940764 0.175955 0 1 0H6C6.82405 0 7.29443 0.940764 6.8 1.6L4.3 4.93333C3.9 5.46667 3.1 5.46667 2.7 4.93333Z" fill="currentColor"></path>
-                                                </svg>
-                                             </span>
-                                          </button>
-                                       </h2>
-                                       <div id="order__collapse_saven" className="accordion-collapse collapse" aria-labelledby="order_saven" data-bs-parent="#general_faqaccordion">
-                                          <div className="accordion-body tp-faq-details-para">
-                                             <p>Yes, the template is develope to be used for complete projects and includes everything
-                                                necessary to build a full website.</p>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  {/* tp-faq-area-end */}
+                  <FAQArea />
 
                   {/* tp-review-area-start */}
                   <div className="tp-review-area tp-sm-pt pt-180 tp-bg-black-2 section-meinus p-relative">
@@ -1995,9 +1586,9 @@ export default function LandingPage() {
                               <div className="col-lg-10">
                                  <div className="tp-footer-content-wrap text-center pb-130">
                                     <h3 className="tp-section-title ff-100 tp-section-title-white-2 mb-30 tp-fade-anim" data-delay=".3">Let’s Build a Creative<br /> Website Today!</h3>
-                                    <p>One-time payment and get all Features, options, templates & demos!</p>
+                                    <p></p>
                                     <div className="tp-fade-anim" data-delay=".5" data-duration="1.2" data-fade-from="top" data-ease="bounce">
-                                       <a className="tp-btn-yellow tp-footer-btn btn-bdr d-inline-flex align-items-center" href="https://themeforest.net/checkout/from_item/59505968?license=regular" target="_blank">
+                                       <a className="tp-btn-yellow tp-footer-btn btn-bdr d-inline-flex align-items-center" href="https://api.whatsapp.com/send/?phone=2348121855275&text&type=phone_number&app_absent=0" target="_blank">
                                           <i>
                                              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
                                                 <path d="M3.1 1.01953L1 3.82034V13.6232C1 13.9946 1.1475 14.3508 1.41005 14.6134C1.6726 14.8761 2.0287 15.0236 2.4 15.0236H12.2C12.5713 15.0236 12.9274 14.8761 13.1899 14.6134C13.4525 14.3508 13.6 13.9946 13.6 13.6232V3.82034L11.5 1.01953H3.1Z" stroke="#0B0606" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -2006,8 +1597,8 @@ export default function LandingPage() {
                                              </svg>
                                           </i>
                                           <span>
-                                             <span className="text-1">Purchase Now</span>
-                                             <span className="text-2">Purchase Now</span>
+                                             <span className="text-1">Book Now</span>
+                                             <span className="text-2">Book Now</span>
                                           </span>
                                        </a>
                                     </div>

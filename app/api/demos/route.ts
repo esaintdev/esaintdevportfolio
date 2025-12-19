@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
+import { verifyToken } from "@/lib/session";
+import { cookies } from "next/headers";
 
 export async function GET() {
     try {
@@ -23,15 +25,19 @@ export async function GET() {
 
 export async function POST(request: Request) {
     try {
-        const supabase = await createClient();
+        // Authenticate using custom session
+        const cookieStore = await cookies();
+        const token = cookieStore.get("admin_session")?.value;
+        const payload = token ? await verifyToken(token) : null;
 
-        // Check for session for secure operations
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) {
+        if (!payload) {
             return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
         }
 
+        const supabase = await createClient();
         const body = await request.json();
+
+        // Ensure proper types for insertion
         const { data: demo, error } = await supabase
             .from('demos')
             .insert([
