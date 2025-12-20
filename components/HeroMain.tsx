@@ -15,12 +15,18 @@ export default function HeroMain() {
                             <div className="tp-hero-content text-center">
                                 <h2 className="tp-hero-title tp-fade-anim" data-delay=".5">
                                     Elevate Your Business <br />
-                                    with Esaint Mjay Dev Solutions
+                                    with Esaint Mjay
                                 </h2>
                                 <div className="tp-fade-anim" data-delay=".7">
-                                    <p>Web Development | Software | Automation | E-commerce</p>
+                                    <p>Websites | Software | Mobile Apps | Modern Web Apps</p>
+                                    <p className="mt-10" style={{ color: '#fff', fontSize: '18px', fontWeight: 'bold' }}>
+                                        <a href="mailto:esaint.designer@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>esaint.designer@gmail.com</a>
+                                        <span className="mx-2">|</span>
+                                        <a href="https://wa.me/2348121855275" style={{ color: 'inherit', textDecoration: 'none' }}>+234 812 185 5275</a>
+                                    </p>
                                 </div>
                             </div>
+
                             <div className="tp-hero-btn-box text-center">
                                 <div className="tp-fade-anim smooth" data-delay=".3" data-ease="bounce" data-fade-from="top" data-duration="1.2">
                                     <Link className="tp-btn-yellow btn-orange btn-bdr d-inline-flex align-items-center" href="/portfolio">

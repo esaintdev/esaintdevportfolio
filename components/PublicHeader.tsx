@@ -50,9 +50,7 @@ export default function PublicHeader() {
                                                 <a href="/about">About</a>
                                             </li>
                                             <li>
-                                                <a href="https://help.aqlova.com/login" target="_blank">
-                                                    Support
-                                                </a>
+                                                <a href="/contact">Contact</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -62,7 +60,7 @@ export default function PublicHeader() {
                                 <div className="tp-header-btn text-end">
                                     <a
                                         className="tp-btn-yellow btn-white btn-bdr d-inline-flex align-items-center"
-                                        href="https://themeforest.net/checkout/from_item/59505968?license=regular"
+                                        href="https://wa.me/2348121855275"
                                         target="_blank"
                                     >
                                         <i>
