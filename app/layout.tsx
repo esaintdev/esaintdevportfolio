@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
-import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,20 +38,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased loaded`}
       >
-        <SmoothScroll />
         {children}
         <Script src="/js/jquery.js" strategy="beforeInteractive" />
         <Script src="/js/bootstrap-bundle.js" />
         <Script src="/js/swiper-bundle.js" />
-        <Script src="/js/plugin.js" strategy="beforeInteractive" />
-        <Script src="/js/Observer.min.js" />
-        <Script src="/js/vertical-beforeafter.js" />
         <Script src="/js/isotope-pkgd.js" />
         <Script src="/js/imagesloaded-pkgd.js" />
         <Script src="/js/purecounter.js" />
         <Script src="/js/magnific-popup.js" />
-        <Script src="/js/slider-init.js" />
-        <Script src="/js/main.js" />
       </body>
     </html>
   );

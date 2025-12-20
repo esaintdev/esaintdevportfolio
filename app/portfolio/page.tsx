@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import PublicHeader from "@/components/PublicHeader";
 import DemoSection from "@/components/DemoSection";
 
 export default function PortfolioPage() {
+    useEffect(() => {
+        document.body.classList.remove('loaded');
+    }, []);
     return (
         <>
             <PublicHeader />

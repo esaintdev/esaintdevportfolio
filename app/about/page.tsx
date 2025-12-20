@@ -1,9 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import PublicHeader from "@/components/PublicHeader";
 
 export default function AboutPage() {
+    useEffect(() => {
+        document.body.classList.remove('loaded');
+    }, []);
     return (
         <>
             <PublicHeader />

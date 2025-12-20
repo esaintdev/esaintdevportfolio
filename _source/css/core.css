@@ -1375,7 +1375,7 @@ body.loaded {
 .tp-hero-bg {
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 0 0 120px 120px;
+  /* border-radius: 0 0 120px 120px; */
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 767px) {
   .tp-hero-bg {
