@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function HeroMain() {
     return (
-        <div className="tp-hero-area tp-hero-bg p-relative fix include-bg pb-50" style={{ backgroundColor: "#010103", borderRadius: 0 }}>
+        <div className="tp-hero-area tp-hero-bg p-relative fix include-bg pb-50 mt-80" style={{ backgroundColor: "#010103", borderRadius: 0 }}>
             <div className="container z-index-1">
                 <div className="row align-items-center">
                     <div className="col-lg-6">

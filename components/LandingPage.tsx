@@ -100,7 +100,9 @@ export default function LandingPage() {
          {/* <Header /> */}
          <PublicHeader />
          <main>
+            
             <HeroMain />
+
 
             <TemplateArea />
             {/* hero area start */}

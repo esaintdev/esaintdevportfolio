@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html style={{ backgroundColor: "#010103" }} lang="en">
       <head>
         <link rel="stylesheet" href="/css/bootstrap.css" />
         <link rel="stylesheet" href="/css/animate.css" />
