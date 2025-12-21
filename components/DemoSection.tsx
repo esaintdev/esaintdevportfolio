@@ -54,9 +54,6 @@ export default function DemoSection({ limit, showViewMore, hideTitle }: DemoSect
                   <div className="col-xl-8">
                      <div className="tp-demo-title-box mb-60 p-relative text-center">
                         <div className="tp-demo-shape-box">
-                           <div className="shape-1">
-                              <img data-speed="1.1" src="/images/shape-1.png" alt="" />
-                           </div>
                            <div className="shape-2">
                               <img data-speed=".8" src="/images/shape-2.png" alt="" />
                            </div>
