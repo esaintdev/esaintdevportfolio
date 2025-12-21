@@ -44,6 +44,14 @@ export default function AboutPage() {
                                 <div className="row justify-content-center">
                                     <div className="col-xl-10">
                                         <div className="tp-about-content-box text-center">
+                                            <div className="d-flex align-items-center justify-content-center mb-40">
+                                                <div className="tp-about-img">
+                                                    <img src="/images/portfolio.png" alt="Esaint Mjay" style={{ width: '200px', height: '200px', borderRadius: '50%', objectFit: 'cover' }} />
+                                                </div>
+                                                <div className="tp-about-info text-start ms-4">
+                                                    <h3 className="tp-section-title-sm mb-0">Esaint Mjay</h3>
+                                                </div>
+                                            </div>
                                             <h3 className="tp-section-title-sm mb-40">Who I Am</h3>
                                             <p className="mb-30" style={{ fontSize: '18px', lineHeight: '1.6' }}>
                                                 Esaint Mjay is a digital developer dedicated to crafting exceptional web experiences, Mobile Apps, and Software Development.
