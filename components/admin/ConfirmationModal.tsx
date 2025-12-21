@@ -5,10 +5,12 @@ import React from "react";
 interface ConfirmationModalProps {
     isOpen: boolean;
     onClose: () => void;
-    onConfirm: () => void;
+    onConfirm?: () => void;
     title: string;
     message: string;
     isLoading?: boolean;
+    isAlert?: boolean; // New prop for single button mode
+    confirmText?: string;
 }
 
 export default function ConfirmationModal({
@@ -18,6 +20,8 @@ export default function ConfirmationModal({
     title,
     message,
     isLoading = false,
+    isAlert = false,
+    confirmText = "Yes, Delete",
 }: ConfirmationModalProps) {
     if (!isOpen) return null;
 
@@ -55,29 +59,36 @@ export default function ConfirmationModal({
                         width: "60px",
                         height: "60px",
                         borderRadius: "50%",
-                        backgroundColor: "rgba(255, 77, 79, 0.1)",
-                        color: "#ff4d4f",
+                        backgroundColor: isAlert ? "rgba(192, 232, 27, 0.1)" : "rgba(255, 77, 79, 0.1)",
+                        color: isAlert ? "#c0e81b" : "#ff4d4f",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         margin: "0 auto 20px",
                     }}
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    >
-                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                        <line x1="12" y1="9" x2="12" y2="13"></line>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
+                    {isAlert ? (
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    ) : (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    )}
                 </div>
                 <h3 style={{ color: "white", fontSize: "20px", fontWeight: "bold", marginBottom: "10px" }}>
                     {title}
@@ -86,50 +97,54 @@ export default function ConfirmationModal({
                     {message}
                 </p>
                 <div style={{ display: "flex", gap: "15px", justifyContent: "center" }}>
+                    {!isAlert && (
+                        <button
+                            onClick={onClose}
+                            disabled={isLoading}
+                            style={{
+                                padding: "10px 25px",
+                                borderRadius: "30px",
+                                background: "rgba(255, 255, 255, 0.05)",
+                                border: "1px solid rgba(255, 255, 255, 0.1)",
+                                color: "white",
+                                cursor: isLoading ? "not-allowed" : "pointer",
+                                fontSize: "14px",
+                                fontWeight: 600,
+                                transition: "all 0.3s ease",
+                            }}
+                            onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)")}
+                            onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)")}
+                        >
+                            Cancel
+                        </button>
+                    )}
                     <button
-                        onClick={onClose}
+                        onClick={onConfirm || onClose} // Use onClose if onConfirm is missing (alert mode)
                         disabled={isLoading}
                         style={{
                             padding: "10px 25px",
                             borderRadius: "30px",
-                            background: "rgba(255, 255, 255, 0.05)",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            color: "white",
-                            cursor: isLoading ? "not-allowed" : "pointer",
-                            fontSize: "14px",
-                            fontWeight: 600,
-                            transition: "all 0.3s ease",
-                        }}
-                        onMouseOver={(e) => (e.currentTarget.style.background = "rgba(255, 255, 255, 0.1)")}
-                        onMouseOut={(e) => (e.currentTarget.style.background = "rgba(255, 255, 255, 0.05)")}
-                    >
-                        Cancel
-                    </button>
-                    <button
-                        onClick={onConfirm}
-                        disabled={isLoading}
-                        style={{
-                            padding: "10px 25px",
-                            borderRadius: "30px",
-                            background: "#ff4d4f",
+                            background: isAlert ? "#c0e81b" : "#ff4d4f", // Different color for alert
                             border: "none",
-                            color: "white",
+                            color: isAlert ? "#000" : "white",
                             cursor: isLoading ? "not-allowed" : "pointer",
                             fontSize: "14px",
                             fontWeight: 600,
-                            boxShadow: "0 4px 15px rgba(255, 77, 79, 0.3)",
+                            boxShadow: isAlert ? "0 4px 15px rgba(192, 232, 27, 0.3)" : "0 4px 15px rgba(255, 77, 79, 0.3)",
                             display: "flex",
                             alignItems: "center",
                             gap: "8px",
+                            justifyContent: "center",
+                            minWidth: "120px"
                         }}
                     >
                         {isLoading ? (
                             <>
                                 <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                                Deleting...
+                                Processing...
                             </>
                         ) : (
-                            "Yes, Delete"
+                            confirmText
                         )}
                     </button>
                 </div>

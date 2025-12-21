@@ -21,8 +21,10 @@ export default function AdminPage() {
     const [selectedIds, setSelectedIds] = useState<number[]>([]);
     const [confirmModal, setConfirmModal] = useState<{
         isOpen: boolean;
-        type: 'single' | 'bulk' | null;
+        type: 'single' | 'bulk' | 'alert' | null;
         id?: number;
+        title?: string;
+        message?: string;
     }>({
         isOpen: false,
         type: null,
@@ -82,10 +84,18 @@ export default function AdminPage() {
             }
         } catch (error) {
             console.error("Delete failed", error);
-            alert("Delete operation failed.");
+            setConfirmModal({
+                isOpen: true,
+                type: 'alert',
+                title: "Error",
+                message: "Delete operation failed."
+            });
         } finally {
             setIsDeleting(false);
-            setConfirmModal({ isOpen: false, type: null });
+            // Only close if it was a confirm dialog, leave open if it became an error alert
+            if (confirmModal.type !== 'alert') {
+                setConfirmModal({ isOpen: false, type: null });
+            }
         }
     };
 
@@ -106,13 +116,30 @@ export default function AdminPage() {
                     const form = document.querySelector('form') as HTMLFormElement;
                     if (form) form.reset();
                 }
+                setConfirmModal({
+                    isOpen: true,
+                    type: 'alert',
+                    title: "Success",
+                    message: editingPortfolio ? "Portfolio updated successfully!" : "Portfolio created successfully!"
+                });
             } else {
                 const errorData = await res.json();
                 console.error("Save failed:", errorData);
-                alert("Failed to save portfolio item. Check console for details.");
+                setConfirmModal({
+                    isOpen: true,
+                    type: 'alert',
+                    title: "Error",
+                    message: "Failed to save portfolio item."
+                });
             }
         } catch (error) {
             console.error("Failed to save portfolio", error);
+            setConfirmModal({
+                isOpen: true,
+                type: 'alert',
+                title: "Error",
+                message: "An unexpected error occurred."
+            });
         }
     };
 
@@ -391,11 +418,13 @@ export default function AdminPage() {
                 onClose={() => setConfirmModal({ ...confirmModal, isOpen: false })}
                 onConfirm={handleConfirmDelete}
                 isLoading={isDeleting}
-                title={confirmModal.type === 'bulk' ? "Delete Multiple Items?" : "Delete Portfolio Item?"}
-                message={confirmModal.type === 'bulk'
+                title={confirmModal.title || (confirmModal.type === 'bulk' ? "Delete Multiple Items?" : "Delete Portfolio Item?")}
+                message={confirmModal.message || (confirmModal.type === 'bulk'
                     ? `Are you sure you want to delete these ${selectedIds.length} items? This action cannot be undone.`
                     : "Are you sure you want to delete this item? This action cannot be undone."
-                }
+                )}
+                isAlert={confirmModal.type === 'alert'}
+                confirmText={confirmModal.type === 'alert' ? "OK" : "Yes, Delete"}
             />
         </div>
     );
