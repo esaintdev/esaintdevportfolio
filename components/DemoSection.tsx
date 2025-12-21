@@ -83,7 +83,7 @@ export default function DemoSection({ limit, showViewMore, hideTitle }: DemoSect
             )}
 
             <div className="tp-demo-item-box">
-               <div className="row gx-40 row-cols-xxl-3 row-cols-md-2 row-cols-1">
+               <div className="row gx-40 row-cols-lg-3 row-cols-md-2 row-cols-1">
                   {displayedPortfolios.map((portfolio) => (
                      <div className="col" key={portfolio.id}>
                         <div className="tp-demo-item anim-zoomin-wrap mb-40">
