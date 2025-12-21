@@ -12,28 +12,13 @@ export default function PublicHeader() {
         <header>
             {/* header area start */}
             <div className="tp-header-area pre-header header-transparent mt-10">
-                <div className="tp-header-top-area d-none">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="tp-header-top-content text-center">
-                                    <p>
-                                        <span>Limited offer</span>{" "}
-                                        <img src="/images/header-fire-icon.svg" alt="" /> Esaint Mjay for $12 only, don’t miss
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div className="tp-header-box">
                     <div className="container container-1730">
                         <div className="row align-items-center">
                             <div className="col-lg-3 col-6">
                                 <div className="tp-header-logo">
                                     <Link href="/">
-                                        <img data-width="140" src="/images/logo.png" alt="Esaint Mjay" />
-                                    </Link>
+<h3 className="tp-section-title-sm text-white">Esaint Mjay</h3>                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-6 d-none d-lg-block">
