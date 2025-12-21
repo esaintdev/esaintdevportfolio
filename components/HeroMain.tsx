@@ -59,7 +59,7 @@ export default function HeroMain() {
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="tp-hero-thumb-wrapper p-relative text-center text-lg-end tp-fade-anim lg:pr-[80px]" data-delay=".9" style={{ paddingTop: '50px' }}>
+                        <div className="tp-hero-thumb-wrapper p-relative text-center text-lg-end tp-fade-anim lg:pr-[40px]" data-delay=".9" style={{ paddingTop: '50px' }}>
                             <div className="tp-hero-thumb-shape" style={{
                                 position: 'relative',
                                 display: 'inline-block',
