@@ -5,7 +5,7 @@ export default function TemplateArea() {
     return (
         <div className="tp-template-area tp-template-content-wrap tp-template-bg p-relative tp-bg-black fix">
             <div className="tp-template-inner">
-                <img className="images w-100" src="images/bg_3.png" alt="" style={{ height: '650px', objectFit: 'cover' }} />
+                <img className="images w-100" src="images/bg_3.png" alt="" style={{ height: '650px', objectFit: 'cover', opacity: 0.1 }} />
                 <div className="tp-template-content" style={{ paddingTop: '130px', paddingBottom: '130px' }}>
                     <div className="tp-template-header">
                         <div className="tp-template-section-title-wrapper">

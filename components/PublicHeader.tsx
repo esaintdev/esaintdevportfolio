@@ -8,6 +8,8 @@ export default function PublicHeader() {
     const pathname = usePathname();
     const isHome = pathname === "/";
 
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
     return (
         <header>
             {/* header area start */}
@@ -18,7 +20,7 @@ export default function PublicHeader() {
                             <div className="col-lg-3 col-6">
                                 <div className="tp-header-logo">
                                     <Link href="/">
-<h3 className="tp-section-title-sm text-white">Esaint Mjay</h3>                                    </Link>
+                                        <h3 className="tp-section-title-sm text-white">Esaint Mjay</h3>                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-6 d-none d-lg-block">
@@ -42,18 +44,26 @@ export default function PublicHeader() {
                                 </div>
                             </div>
                             <div className="col-lg-3 col-6">
-                                <div className="tp-header-btn text-end">
+                                <div className="tp-header-btn text-end d-flex align-items-center justify-content-end gap-3">
                                     <a
-                                        className="tp-btn-yellow btn-white btn-bdr d-inline-flex align-items-center"
+                                        className="tp-btn-yellow btn-white btn-bdr d-none d-md-inline-flex align-items-center"
                                         href="https://wa.me/2348121855275"
                                         target="_blank"
                                     >
-                                        
                                         <span>
                                             <span className="text-1">Contact</span>
                                             <span className="text-2">Contact</span>
                                         </span>
                                     </a>
+
+                                    {/* Mobile Menu Button */}
+                                    <button
+                                        className="d-lg-none"
+                                        onClick={() => setIsMobileMenuOpen(true)}
+                                        style={{ background: 'transparent', border: 'none', color: 'white', fontSize: '24px' }}
+                                    >
+                                        <i className="fas fa-bars"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +71,68 @@ export default function PublicHeader() {
                 </div>
             </div>
             {/* header area end */}
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100vh',
+                    backgroundColor: 'rgba(1, 1, 3, 0.95)',
+                    zIndex: 9999,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backdropFilter: 'blur(10px)'
+                }}>
+                    <button
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        style={{
+                            position: 'absolute',
+                            top: '20px',
+                            right: '20px',
+                            background: 'transparent',
+                            border: 'none',
+                            color: 'white',
+                            fontSize: '30px'
+                        }}
+                    >
+                        <i className="fas fa-times"></i>
+                    </button>
+
+                    <nav style={{ textAlign: 'center' }}>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                            <li style={{ marginBottom: '20px' }}>
+                                <Link href="/" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '24px', color: 'white', fontWeight: 'bold' }}>Home</Link>
+                            </li>
+                            <li style={{ marginBottom: '20px' }}>
+                                <Link href="/portfolio" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '24px', color: 'white', fontWeight: 'bold' }}>Portfolio</Link>
+                            </li>
+                            <li style={{ marginBottom: '20px' }}>
+                                <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '24px', color: 'white', fontWeight: 'bold' }}>About</Link>
+                            </li>
+                            <li style={{ marginBottom: '20px' }}>
+                                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '24px', color: 'white', fontWeight: 'bold' }}>Contact</Link>
+                            </li>
+                            <li>
+                                <a
+                                    className="tp-btn-yellow btn-white btn-bdr d-inline-flex align-items-center"
+                                    href="https://wa.me/2348121855275"
+                                    target="_blank"
+                                >
+                                    <span>
+                                        <span className="text-1">Contact Me</span>
+                                        <span className="text-2">Contact Me</span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            )}
         </header>
     );
 }

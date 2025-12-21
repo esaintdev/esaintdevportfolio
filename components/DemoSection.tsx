@@ -19,7 +19,13 @@ const getValidUrl = (url?: string) => {
    return `https://${url}`;
 };
 
-export default function DemoSection() {
+interface DemoSectionProps {
+   limit?: number;
+   showViewMore?: boolean;
+   hideTitle?: boolean;
+}
+
+export default function DemoSection({ limit, showViewMore, hideTitle }: DemoSectionProps) {
    const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
    const [loading, setLoading] = useState(true);
 
@@ -38,45 +44,50 @@ export default function DemoSection() {
 
    if (loading) return <div className="text-center py-20 text-white">Loading Portfolios...</div>;
 
+   const displayedPortfolios = limit ? portfolios.slice(0, limit) : portfolios;
+
    return (
-      <div id="portfolio" className="tp-demo-area tp-sm-pb tp-demo-spacing pt-200 pb-120">
+      <div id="portfolio" className={`tp-demo-area tp-sm-pb tp-demo-spacing ${hideTitle ? 'pt-100' : 'pt-200'} pb-120`}>
          <div id="demo-2" className="container container-1830">
-            <div className="row justify-content-center">
-               <div className="col-xl-8">
-                  <div className="tp-demo-title-box mb-60 p-relative text-center">
-                     <div className="tp-demo-shape-box">
-                        <div className="shape-1">
-                           <img data-speed="1.1" src="/images/shape-1.png" alt="" />
+            {!hideTitle && (
+               <div className="row justify-content-center">
+                  <div className="col-xl-8">
+                     <div className="tp-demo-title-box mb-60 p-relative text-center">
+                        <div className="tp-demo-shape-box">
+                           <div className="shape-1">
+                              <img data-speed="1.1" src="/images/shape-1.png" alt="" />
+                           </div>
+                           <div className="shape-2">
+                              <img data-speed=".8" src="/images/shape-2.png" alt="" />
+                           </div>
                         </div>
-                        <div className="shape-2">
-                           <img data-speed=".8" src="/images/shape-2.png" alt="" />
+                        <span className="tp-demo-stroke-text tp-fade-anim" data-delay=".3">
+                           {portfolios.length}+
+                        </span>
+                        <span className="tp-demo-subtitle mb-35 tp-fade-anim" data-delay=".5">
+                           My Portfolio Collection
+                        </span>
+                        <h4 className="tp-section-title mb-30 tp-fade-anim" data-delay=".7">
+                           Explore {portfolios.length}+ <br />
+                           Completed <i>Projects</i>
+                        </h4>
+                        <p className="mb-30 tp-fade-anim">
+                           Discover {portfolios.length}+ beautifully crafted projects. Fully responsive and
+                           functional.
+                        </p>
+                        <div className="tp-demo-cetagories tp-fade-anim" data-delay=".9">
+                           <span>Exclusive Feature</span>
+                           <span>Multiple Layouts</span>
+                           <span>Dedicated Support</span>
                         </div>
-                     </div>
-                     <span className="tp-demo-stroke-text tp-fade-anim" data-delay=".3">
-                        {portfolios.length}+
-                     </span>
-                     <span className="tp-demo-subtitle mb-35 tp-fade-anim" data-delay=".5">
-                        My Portfolio Collection
-                     </span>
-                     <h4 className="tp-section-title mb-30 tp-fade-anim" data-delay=".7">
-                        Explore {portfolios.length}+ <br />
-                        Completed <i>Projects</i>
-                     </h4>
-                     <p className="mb-30 tp-fade-anim">
-                        Discover {portfolios.length}+ beautifully crafted projects. Fully responsive and
-                        functional.
-                     </p>
-                     <div className="tp-demo-cetagories tp-fade-anim" data-delay=".9">
-                        <span>Exclusive Feature</span>
-                        <span>Multiple Layouts</span>
-                        <span>Dedicated Support</span>
                      </div>
                   </div>
                </div>
-            </div>
+            )}
+
             <div className="tp-demo-item-box">
                <div className="row gx-40 row-cols-xxl-3 row-cols-md-2 row-cols-1">
-                  {portfolios.map((portfolio) => (
+                  {displayedPortfolios.map((portfolio) => (
                      <div className="col" key={portfolio.id}>
                         <div className="tp-demo-item anim-zoomin-wrap mb-40">
                            {portfolio.isNew && <span className="tp-demo-new">NEW</span>}
@@ -118,8 +129,8 @@ export default function DemoSection() {
                                        href={getValidUrl(portfolio.link_light)}
                                        target="_blank"
                                     > */}
-                                       {portfolio.title}
-                                    
+                                    {portfolio.title}
+
                                  </h4>
                               </div>
                            </div>
@@ -127,6 +138,16 @@ export default function DemoSection() {
                      </div>
                   ))}
                </div>
+
+               {showViewMore && (
+                  <div className="row justify-content-center mt-50">
+                     <div className="col-auto">
+                        <a href="/portfolio" className="tp-btn-yellow" style={{ borderRadius: '50px', padding: '15px 40px' }}>
+                           View More Portfolio
+                        </a>
+                     </div>
+                  </div>
+               )}
             </div>
          </div>
       </div>

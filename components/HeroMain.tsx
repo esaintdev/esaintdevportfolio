@@ -16,7 +16,7 @@ export default function HeroMain() {
                                     name's <span style={{ color: '#3A96E8' }}>Esaint.</span>
                                 </h2>
                                 <div className="tp-fade-anim mb-40" data-delay=".7">
-                                    <p style={{ fontSize: '18px', maxWidth: '500px', color: '#B0B0B0' }}>I'm a fullstack developer. Currently working with @knuthub as a developer and graphic designer.</p>
+                                    <p style={{ fontSize: '18px', maxWidth: '500px', color: '#B0B0B0' }}>I'm a fullstack developer. Currently working with knuthub as a developer and graphic designer.</p>
                                 </div>
 
                                 <div className="tp-hero-btn-box text-start">
@@ -59,7 +59,7 @@ export default function HeroMain() {
                         </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className="tp-hero-thumb-wrapper p-relative text-center text-lg-end tp-fade-anim" data-delay=".9" style={{ paddingTop: '50px' }}>
+                        <div className="tp-hero-thumb-wrapper p-relative text-center text-lg-end tp-fade-anim" data-delay=".9" style={{ paddingTop: '50px', paddingRight: '80px' }}>
                             <div className="tp-hero-thumb-shape" style={{
                                 position: 'relative',
                                 display: 'inline-block',
@@ -67,11 +67,12 @@ export default function HeroMain() {
                                 border: '2px solid rgba(255,255,255,0.1)',
                                 padding: '20px',
                                 background: 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
-                                transform: 'scale(1.2)'
+                                transform: 'scale(1.2)',
+                                maxWidth: '450px'
                             }}>
                                 <img
                                     src="images/portfolio.png"
-                                    alt="Visual Designer"
+                                    alt="Developer Designer"
                                     className="img-fluid"
                                     style={{
                                         borderRadius: '200px 200px 0 0',
@@ -96,7 +97,7 @@ export default function HeroMain() {
                             </div>
 
                             {/* Social Icons Sidebar */}
-                            <div className="tp-hero-social d-none d-xl-flex flex-column" style={{ position: 'absolute', right: '-80px', top: '50%', transform: 'translateY(-50%)', gap: '20px' }}>
+                            <div className="tp-hero-social d-none d-xl-flex flex-column" style={{ position: 'absolute', right: '0', top: '50%', transform: 'translateY(-50%)', gap: '20px', zIndex: 10 }}>
                                 <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', color: 'rgba(255,255,255,0.5)', marginBottom: '20px', fontSize: '12px', letterSpacing: '2px' }}>FOLLOW ME ON</span>
                                 <a href="#" style={{ color: '#3A96E8', fontSize: '20px' }}><i className="fab fa-behance"></i></a>
                                 <a href="#" style={{ color: '#ea4c89', fontSize: '20px' }}><i className="fab fa-dribbble"></i></a>

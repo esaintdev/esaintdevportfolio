@@ -100,13 +100,15 @@ export default function LandingPage() {
          {/* <Header /> */}
          <PublicHeader />
          <main>
-            
+
             <HeroMain />
 
 
             <TemplateArea />
             {/* hero area start */}
             {/* hero area end */}
+
+            <DemoSection limit={3} showViewMore={true} hideTitle={false} />
 
 
             {/* feature-area start */}
