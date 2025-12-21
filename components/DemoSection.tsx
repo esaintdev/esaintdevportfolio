@@ -6,12 +6,18 @@ interface Portfolio {
    id: number;
    title: string;
    image: string;
-   linkLight?: string;
-   linkDark?: string;
-   linkRTL?: string;
+   link_light?: string;
+   link_dark?: string;
+   link_rtl?: string;
    isNew: boolean;
    category?: string;
 }
+
+const getValidUrl = (url?: string) => {
+   if (!url) return "#";
+   if (url.startsWith("http://") || url.startsWith("https://")) return url;
+   return `https://${url}`;
+};
 
 export default function DemoSection() {
    const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
@@ -75,7 +81,7 @@ export default function DemoSection() {
                         <div className="tp-demo-item anim-zoomin-wrap mb-40">
                            {portfolio.isNew && <span className="tp-demo-new">NEW</span>}
                            <div className="tp-demo-thumb anim-zoomin p-relative">
-                              <a href={portfolio.linkLight || "#"} target="_blank">
+                              <a href={getValidUrl(portfolio.link_light)} target="_blank">
                                  <img
                                     src={
                                        portfolio.image.startsWith('http')
@@ -91,11 +97,11 @@ export default function DemoSection() {
 
                               <div className="tp-demo-btn-wrap">
                                  {/* Only showing simple 'Visit' button for portfolio context */}
-                                 {portfolio.linkLight && (
+                                 {portfolio.link_light && (
                                     <a
                                        className="tp-demo-btn"
                                        target="_blank"
-                                       href={portfolio.linkLight}
+                                       href={getValidUrl(portfolio.link_light)}
                                     >
                                        <span>
                                           <span className="text-1">View Project</span>
@@ -108,12 +114,12 @@ export default function DemoSection() {
                            <div className="tp-demo-content-wrap text-center">
                               <div className="tp-demo-content">
                                  <h4 className="tp-demo-title">
-                                    <a
-                                       href={portfolio.linkLight || "#"}
+                                    {/* <a
+                                       href={getValidUrl(portfolio.link_light)}
                                        target="_blank"
-                                    >
+                                    > */}
                                        {portfolio.title}
-                                    </a>
+                                    
                                  </h4>
                               </div>
                            </div>

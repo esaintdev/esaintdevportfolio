@@ -7,9 +7,9 @@ interface Portfolio {
     id: number;
     title: string;
     image: string;
-    linkLight?: string;
-    linkDark?: string;
-    linkRTL?: string;
+    link_light?: string;
+    link_dark?: string;
+    link_rtl?: string;
     isNew: boolean;
     category?: string;
 }
@@ -243,7 +243,7 @@ export default function AdminPage() {
                             name="link"
                             type="text"
                             placeholder="Project Link (URL)"
-                            defaultValue={editingPortfolio?.linkLight || ""}
+                            defaultValue={editingPortfolio?.link_light || ""}
                             className="tp-contact-input"
                             style={{
                                 width: '100%',
