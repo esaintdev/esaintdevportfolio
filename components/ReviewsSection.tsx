@@ -3,84 +3,84 @@ import ReviewItem from './ReviewItem';
 
 const reviewsData = [
     {
-        name: "user1",
-        email: "fatima@gmail.com",
+        name: "Wisdom Emori",
+        email: "fatima.s@example.com",
         avatar: "https://randomuser.me/api/portraits/women/65.jpg",
         rating: 5,
-        status: "Customer Support",
-        description: "Great customer support, very quick and efficient. 10/10 would recommend!"
+        status: "Prediction Sport Website Review",
+        description: "Insane Website delivery, I appreciate the speed, weldone"
     },
     {
-        name: "user2",
-        email: "e.saint@gmail.com",
+        name: "Otuekong Akpaneto",
+        email: "adebayo.dev@example.com",
         avatar: "https://randomuser.me/api/portraits/men/32.jpg",
         rating: 5,
-        status: "Design Quality",
-        description: "Thank you very much! I appreciate, you have a 5 star theme. It's really worth it!"
+        status: "API Consumption",
+        description: "The React integration was seamless. The component structure you built is incredibly scalable."
     },
     {
-        name: "user3",
-        email: "mjay@gmail.com",
+        name: "Uwem Etim",
+        email: "k.asante@example.com",
         avatar: "https://randomuser.me/api/portraits/men/45.jpg",
         rating: 5,
-        status: "Customer Support",
-        description: "Great customer support, very quick and efficient. 10/10 would recommend!"
+        status: "Backend Architecture",
+        description: "The API response times are now lightning fast."
     },
     {
-        name: "user4",
-        email: "lukas.mayer@example.com",
+        name: "Kofi Mensah",
+        email: "kofi.m@example.com",
         avatar: "https://randomuser.me/api/portraits/men/76.jpg",
         rating: 5,
-        status: "Customizability",
-        description: "5 star on from design to support"
+        status: "SEO Web Performance",
+        description: "Hello Treasure, Our lighthouse score went from 60 to 98. The SEO optimization is also top-notch."
     },
     {
-        name: "user5",
-        email: "edosik1312",
+        name: "Godwin Lawson",
+        email: "emeka.o@example.com",
         avatar: "https://randomuser.me/api/portraits/men/32.jpg",
         rating: 5,
-        status: "Customizability",
-        description: "5 star on from design to support"
+        status: "Software Quality",
+        description: "Clean code practices and comprehensive testing. The bug rate dropped to near zero."
     },
     {
-        name: "user6",
-        email: "juandeveloper03",
+        name: "Chukwuebuka Francis",
+        email: "obinna.eze@example.com",
         avatar: "https://randomuser.me/api/portraits/men/45.jpg",
         rating: 5,
-        status: "Customer Support",
-        description: "Great customer support, very quick and efficient. 10/10 would recommend!"
+        status: "Mobile App SEO Review",
+        description: "Thank you Treasure, Our Flutter app performance improved by 40% after their optimization. Highly recommended!"
     },
     {
-        name: "user7",
-        email: "juandeveloper03",
-        avatar: "https://randomuser.me/api/portraits/men/45.jpg",
-        rating: 5,
-        status: "Design Quality",
-        description: "Thank you very much! I appreciate, you have a 5 star theme. It's really worth it!"
-    },
-    {
-        name: "user8",
-        email: "edosik1312",
+        name: "Bright Flow Logistic",
+        email: "malik.abiola@example.com",
         avatar: "https://randomuser.me/api/portraits/men/32.jpg",
         rating: 5,
-        status: "Customizability",
-        description: "5 star on from design to support"
+        status: "Logistic Website Review",
+        description: "Delivered a complete logistic website solution with Next.js and Supabase ahead of schedule."
     },
     {
-        name: "user9",
-        email: "shykeys",
+        name: "Prestige Media",
+        email: "malik.abiola@example.com",
+        avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+        rating: 5,
+        status: "Social Media Marketing",
+        description: "Hi, Treasure, you delivered a spectacular social media reviving, thank you for the patience you had for us."
+    },
+    {
+        name: "Dr. Umana Umoh",
+        email: "chioma.n@example.com",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg",
         rating: 5,
-        status: "Documentation Quality",
-        description: "easy to use and a very great customer service"
+        status: "Ecommerce Website Review",
+        description: "Thank you for the amazing website you did, More jobs are coming"
     },
     {
-        name: "user10",
-        email: "masoodhusain007",
+        name: "Father Unyime Pascal",
+        email: "tunde.b@example.com",
         avatar: "https://randomuser.me/api/portraits/men/22.jpg",
         rating: 5,
-        status: "Design Quality",
-        description: "Thank you very much! I appreciate, you have a 5 star theme. It's really worth it!"
+        status: "Foundation Website",
+        description: "Great work, my son, i appreciate your work"
     }
 ];
 
@@ -112,9 +112,9 @@ const ReviewsSection = () => {
           animation: scroll-vertical 80s linear infinite;
         }
         /* Vary speeds slightly for more organic feel */
-        .col-speed-1 { animation-duration: 90s; }
-        .col-speed-2 { animation-duration: 75s; }
-        .col-speed-3 { animation-duration: 85s; }
+        .col-speed-1 { animation-duration: 50s; }
+        .col-speed-2 { animation-duration: 55s; }
+        .col-speed-3 { animation-duration: 55s; }
 
         .vertical-scroll-column:hover {
           animation-play-state: paused;

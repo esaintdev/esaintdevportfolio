@@ -475,13 +475,6 @@ export default function LandingPage() {
                               <p></p>
                               <div className="tp-fade-anim" data-delay=".5" data-duration="1.2" data-fade-from="top" data-ease="bounce">
                                  <a className="tp-btn-yellow tp-footer-btn btn-bdr d-inline-flex align-items-center" href="https://api.whatsapp.com/send/?phone=2348121855275&text&type=phone_number&app_absent=0" target="_blank">
-                                    <i>
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-                                          <path d="M3.1 1.01953L1 3.82034V13.6232C1 13.9946 1.1475 14.3508 1.41005 14.6134C1.6726 14.8761 2.0287 15.0236 2.4 15.0236H12.2C12.5713 15.0236 12.9274 14.8761 13.1899 14.6134C13.4525 14.3508 13.6 13.9946 13.6 13.6232V3.82034L11.5 1.01953H3.1Z" stroke="#0B0606" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                          <path d="M1 3.82227H13.6" stroke="#0B0606" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                          <path d="M10.1 6.62012C10.1 7.36272 9.805 8.07491 9.2799 8.60002C8.7548 9.12512 8.04261 9.42012 7.3 9.42012C6.55739 9.42012 5.8452 9.12512 5.3201 8.60002C4.795 8.07491 4.5 7.36272 4.5 6.62012" stroke="#0B0606" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
-                                       </svg>
-                                    </i>
                                     <span>
                                        <span className="text-1">Book Now</span>
                                        <span className="text-2">Book Now</span>

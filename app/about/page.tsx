@@ -44,11 +44,10 @@ export default function AboutPage() {
                                 <div className="row justify-content-center">
                                     <div className="col-xl-10">
                                         <div className="tp-about-content-box text-center">
-                                            <h3 className="tp-section-title-sm mb-40">Who We Are</h3>
+                                            <h3 className="tp-section-title-sm mb-40">Who I Am</h3>
                                             <p className="mb-30" style={{ fontSize: '18px', lineHeight: '1.6' }}>
-                                                Esaint Mjay is a premier digital agency dedicated to crafting exceptional web experiences.
-                                                We believe in the power of design and technology to transform businesses. Our team of passionate creators
-                                                and engineers works tirelessly to build solutions that are not only visually stunning but also robust and scalable.
+                                                Esaint Mjay is a digital developer dedicated to crafting exceptional web experiences, Mobile Apps, and Software Development.
+                                                I believe in the power of programming and technology to transform businesses. I work tirelessly to build solutions that are not only visually stunning but also robust and scalable.
                                             </p>
                                             <p className="mb-60" style={{ fontSize: '18px', lineHeight: '1.6' }}>
                                                 From concept to deployment, we accompany our clients every step of the way, ensuring their vision comes to life

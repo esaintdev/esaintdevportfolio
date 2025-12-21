@@ -34,10 +34,10 @@ const ReviewItem: React.FC<ReviewItemProps> = ({ name, email, avatar, rating, st
             <p className="mb-20" style={{ color: '#888', fontSize: '15px', lineHeight: '26px' }}>{description}</p>
 
             <div className="tp-review-customer" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                <div className="icons" style={{ flexShrink: 0 }}>
+                {/* <div className="icons" style={{ flexShrink: 0 }}>
                     <img src={avatar} alt={name} style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />
-                </div>
-                <span className="emails" style={{ color: '#fff', fontSize: '14px' }}>{email}</span>
+                </div> */}
+                <span className="emails" style={{ color: '#fff', fontSize: '14px' }}>{name}</span>
             </div>
         </div>
     );
