@@ -416,7 +416,7 @@ export default function AdminPage() {
             <ConfirmationModal
                 isOpen={confirmModal.isOpen}
                 onClose={() => setConfirmModal({ ...confirmModal, isOpen: false })}
-                onConfirm={handleConfirmDelete}
+                onConfirm={confirmModal.type === 'alert' ? undefined : handleConfirmDelete}
                 isLoading={isDeleting}
                 title={confirmModal.title || (confirmModal.type === 'bulk' ? "Delete Multiple Items?" : "Delete Portfolio Item?")}
                 message={confirmModal.message || (confirmModal.type === 'bulk'
