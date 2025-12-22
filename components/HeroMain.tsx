@@ -2,7 +2,11 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function HeroMain() {
+interface HeroMainProps {
+    settings?: any;
+}
+
+export default function HeroMain({ settings }: HeroMainProps) {
     return (
         <div className="tp-hero-area tp-hero-bg p-relative fix include-bg pb-50 mt-80" style={{ backgroundColor: "#010103", borderRadius: 0 }}>
             <div className="container z-index-1">
@@ -13,20 +17,28 @@ export default function HeroMain() {
                                 {/* <span className="tp-section-subtitle tp-fade-anim mb-30 d-inline-block" data-delay=".3" style={{ color: '#FFD700' }}>Welcome to my portfolio!</span> */}
                                 <h2 className="tp-hero-title tp-fade-anim mb-30" data-delay=".5" style={{ fontSize: '70px', lineHeight: '1.1' }}>
                                     Hello, my <br />
-                                    name's <span style={{ color: '#3A96E8' }}>Esaint.</span>
+                                    name's <span style={{ color: '#3A96E8' }}>{settings?.profile_name?.split(' ')[0] || "Esaint"}.</span>
                                 </h2>
                                 <div className="tp-fade-anim mb-40" data-delay=".7">
-                                    <p style={{ fontSize: '18px', maxWidth: '500px', color: '#B0B0B0' }}>I'm a fullstack developer. Currently working with knuthub as a developer and graphic designer.</p>
+                                    <p style={{ fontSize: '18px', maxWidth: '500px', color: '#B0B0B0' }}>
+                                        {settings?.profile_bio || "I'm a fullstack developer. Currently working with knuthub as a developer and graphic designer."}
+                                    </p>
                                 </div>
 
                                 <div className="tp-hero-btn-box text-start">
                                     <div className="tp-fade-anim smooth d-inline-block me-3" data-delay=".5" data-ease="bounce" data-fade-from="top" data-duration="1.2">
-                                        <Link className="tp-btn-yellow btn-gray btn-bdr border-style d-inline-flex align-items-center" href="/contact" style={{ borderRadius: '30px', padding: '10px 30px' }}>
+                                        <a
+                                            className="tp-btn-yellow btn-gray btn-bdr border-style d-inline-flex align-items-center"
+                                            href={settings?.cv_url || "/contact"}
+                                            target={settings?.cv_url ? "_blank" : "_self"}
+                                            rel={settings?.cv_url ? "noopener noreferrer" : ""}
+                                            style={{ borderRadius: '30px', padding: '10px 30px' }}
+                                        >
                                             <span>
                                                 <span className="text-1">Download cv</span>
                                                 <span className="text-2">Download cv</span>
                                             </span>
-                                        </Link>
+                                        </a>
                                     </div>
                                     <div className="tp-fade-anim smooth d-inline-block" data-delay=".3" data-ease="bounce" data-fade-from="top" data-duration="1.2">
                                         <Link className="tp-btn-yellow btn-bdr d-inline-flex align-items-center" href="/portfolio" style={{ borderRadius: '30px', padding: '10px 30px', background: 'transparent', border: '1px solid rgba(255,255,255,0.2)', color: '#fff' }}>

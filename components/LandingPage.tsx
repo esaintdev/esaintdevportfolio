@@ -13,7 +13,11 @@ import HeroMain from './HeroMain';
 import TemplateArea from './TemplateArea';
 import PublicHeader from './PublicHeader';
 
-export default function LandingPage() {
+interface LandingPageProps {
+   settings?: any;
+}
+
+export default function LandingPage({ settings }: LandingPageProps) {
    useEffect(() => {
       // Logic to hide preloader
       const hidePreloader = () => {
@@ -101,7 +105,7 @@ export default function LandingPage() {
          <PublicHeader />
          <main>
 
-            <HeroMain />
+            <HeroMain settings={settings} />
 
 
             <TemplateArea />
@@ -488,7 +492,7 @@ export default function LandingPage() {
                      </div>
                   </div>
 
-                  <SocialConnection />
+                  <SocialConnection settings={settings} />
 
                </div>
             </div>

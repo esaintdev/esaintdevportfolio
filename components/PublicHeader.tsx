@@ -4,7 +4,11 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function PublicHeader() {
+interface PublicHeaderProps {
+    settings?: any;
+}
+
+export default function PublicHeader({ settings }: PublicHeaderProps) {
     const pathname = usePathname();
     const isHome = pathname === "/";
 
@@ -47,7 +51,7 @@ export default function PublicHeader() {
                                 <div className="tp-header-btn text-end d-flex align-items-center justify-content-end gap-3">
                                     <a
                                         className="tp-btn-yellow btn-white btn-bdr d-none d-md-inline-flex align-items-center"
-                                        href="https://wa.me/2348121855275"
+                                        href={`https://wa.me/${settings?.whatsapp ? settings.whatsapp.replace(/\+/g, '') : '2348121855275'}`}
                                         target="_blank"
                                     >
                                         <span>
@@ -127,7 +131,7 @@ export default function PublicHeader() {
                             <li>
                                 <a
                                     className="tp-btn-yellow btn-white btn-bdr d-inline-flex align-items-center"
-                                    href="https://wa.me/2348121855275"
+                                    href={`https://wa.me/${settings?.whatsapp ? settings.whatsapp.replace(/\+/g, '') : '2348121855275'}`}
                                     target="_blank"
                                 >
                                     <span>
