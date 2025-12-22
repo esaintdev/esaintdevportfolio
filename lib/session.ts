@@ -1,7 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const SECRET_KEY = process.env.AUTH_SECRET || "your-secret-key-change-this";
+const SECRET_KEY = process.env.AUTH_SECRET || "";
 const key = new TextEncoder().encode(SECRET_KEY);
 
 export async function signToken(payload: any) {
@@ -30,8 +30,8 @@ export async function createSession(payload: any) {
 
     cookieStore.set("admin_session", token, {
         httpOnly: true,
-        secure: false, // process.env.NODE_ENV === "production", // RELAXED FOR DEBUGGING
-        maxAge: 60 * 60 * 24, // 24 hours
+        secure: false, 
+        maxAge: 60 * 60 * 24,
         path: "/",
         sameSite: "lax",
     });

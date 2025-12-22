@@ -92,6 +92,20 @@ export default function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
                     {!isCollapsed && <span style={{ whiteSpace: 'nowrap' }}>Portfolios</span>}
                 </Link>
 
+                <Link href="/admin/experience" style={linkStyle("/admin/experience")}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: isCollapsed ? '0' : '15px', color: '#c0e81b', minWidth: '20px' }}>
+                        <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {!isCollapsed && <span style={{ whiteSpace: 'nowrap' }}>Experience</span>}
+                </Link>
+
+                <Link href="/admin/skills" style={linkStyle("/admin/skills")}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: isCollapsed ? '0' : '15px', color: '#c0e81b', minWidth: '20px' }}>
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    {!isCollapsed && <span style={{ whiteSpace: 'nowrap' }}>Skills</span>}
+                </Link>
+
                 <div style={{
                     marginTop: '40px',
                     padding: '0 10px',
@@ -115,6 +129,36 @@ export default function Sidebar({ isCollapsed, toggleSidebar }: SidebarProps) {
                     </svg>
                     {!isCollapsed && <span style={{ whiteSpace: 'nowrap' }}>General</span>}
                 </Link>
+
+                <div style={{
+                    marginTop: 'auto',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                    paddingTop: '20px',
+                    marginBottom: '20px'
+                }}>
+                    <button
+                        onClick={async () => {
+                            try {
+                                await fetch("/api/auth/logout", { method: "POST" });
+                                window.location.href = "/login";
+                            } catch (error) {
+                                console.error("Logout failed", error);
+                            }
+                        }}
+                        style={{
+                            ...linkStyle("logout"),
+                            width: '100%',
+                            background: 'transparent',
+                            border: 'none',
+                            color: '#ff4d4d'
+                        }}
+                    >
+                        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ marginRight: isCollapsed ? '0' : '15px', minWidth: '20px' }}>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        {!isCollapsed && <span style={{ whiteSpace: 'nowrap' }}>Logout</span>}
+                    </button>
+                </div>
             </nav>
 
             <button
