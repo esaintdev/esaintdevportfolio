@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import ConfirmationModal from "@/components/admin/ConfirmationModal";
 
 interface Experience {
     id: string;
@@ -16,6 +16,16 @@ export default function ExperienceAdminPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
     const [editingExperience, setEditingExperience] = useState<Experience | null>(null);
+
+    // Modal State
+    const [modal, setModal] = useState({
+        isOpen: false,
+        title: "",
+        message: "",
+        isAlert: false,
+        onConfirm: () => { },
+        isLoading: false
+    });
 
     useEffect(() => {
         fetchExperiences();
@@ -35,19 +45,46 @@ export default function ExperienceAdminPage() {
         }
     };
 
-    const handleDelete = async (id: string) => {
-        if (!confirm("Are you sure you want to delete this experience?")) return;
+    const handleDeleteClick = (id: string) => {
+        setModal({
+            isOpen: true,
+            title: "Delete Experience",
+            message: "Are you sure you want to delete this experience? This action cannot be undone.",
+            isAlert: false,
+            isLoading: false,
+            onConfirm: () => confirmDelete(id)
+        });
+    };
 
+    const confirmDelete = async (id: string) => {
+        setModal(prev => ({ ...prev, isLoading: true }));
         try {
             const res = await fetch(`/api/experience/${id}`, { method: "DELETE" });
             if (res.ok) {
                 setExperiences(experiences.filter(e => e.id !== id));
+                closeModal();
             } else {
-                alert("Failed to delete experience");
+                showAlert("Error", "Failed to delete experience", true);
             }
         } catch (error) {
             console.error("Delete failed", error);
+            showAlert("Error", "An unexpected error occurred", true);
         }
+    };
+
+    const showAlert = (title: string, message: string, isError = false) => {
+        setModal({
+            isOpen: true,
+            title,
+            message,
+            isAlert: true,
+            isLoading: false,
+            onConfirm: () => closeModal()
+        });
+    };
+
+    const closeModal = () => {
+        setModal(prev => ({ ...prev, isOpen: false }));
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -75,11 +112,13 @@ export default function ExperienceAdminPage() {
                 fetchExperiences();
                 (e.target as HTMLFormElement).reset();
                 setEditingExperience(null);
+                showAlert("Success", "Experience saved successfully!");
             } else {
-                alert("Failed to save experience");
+                showAlert("Error", "Failed to save experience", true);
             }
         } catch (error) {
             console.error("Error saving experience", error);
+            showAlert("Error", "An unexpected error occurred", true);
         } finally {
             setIsSaving(false);
         }
@@ -260,7 +299,7 @@ export default function ExperienceAdminPage() {
                                                         </svg>
                                                     </button>
                                                     <button
-                                                        onClick={() => handleDelete(exp.id)}
+                                                        onClick={() => handleDeleteClick(exp.id)}
                                                         className="p-1 hover:text-red-500 text-gray-400 transition-colors"
                                                         title="Delete"
                                                     >
@@ -281,6 +320,16 @@ export default function ExperienceAdminPage() {
                     </div>
                 </div>
             </div>
+
+            <ConfirmationModal
+                isOpen={modal.isOpen}
+                onClose={closeModal}
+                onConfirm={modal.onConfirm}
+                title={modal.title}
+                message={modal.message}
+                isLoading={modal.isLoading}
+                isAlert={modal.isAlert}
+            />
         </div>
     );
 }

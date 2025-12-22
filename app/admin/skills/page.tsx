@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import ConfirmationModal from "@/components/admin/ConfirmationModal";
 
 interface Skill {
     id: string;
@@ -16,6 +16,16 @@ export default function SkillsAdminPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [isSaving, setIsSaving] = useState(false);
     const [editingSkill, setEditingSkill] = useState<Skill | null>(null);
+
+    // Modal State
+    const [modal, setModal] = useState({
+        isOpen: false,
+        title: "",
+        message: "",
+        isAlert: false,
+        onConfirm: () => { },
+        isLoading: false
+    });
 
     useEffect(() => {
         fetchSkills();
@@ -35,19 +45,46 @@ export default function SkillsAdminPage() {
         }
     };
 
-    const handleDelete = async (id: string) => {
-        if (!confirm("Are you sure you want to delete this skill?")) return;
+    const handleDeleteClick = (id: string) => {
+        setModal({
+            isOpen: true,
+            title: "Delete Skill",
+            message: "Are you sure you want to delete this skill? This action cannot be undone.",
+            isAlert: false,
+            isLoading: false,
+            onConfirm: () => confirmDelete(id)
+        });
+    };
 
+    const confirmDelete = async (id: string) => {
+        setModal(prev => ({ ...prev, isLoading: true }));
         try {
             const res = await fetch(`/api/skills/${id}`, { method: "DELETE" });
             if (res.ok) {
                 setSkills(skills.filter(s => s.id !== id));
+                closeModal();
             } else {
-                alert("Failed to delete skill");
+                showAlert("Error", "Failed to delete skill", true);
             }
         } catch (error) {
             console.error("Delete failed", error);
+            showAlert("Error", "An unexpected error occurred", true);
         }
+    };
+
+    const showAlert = (title: string, message: string, isError = false) => {
+        setModal({
+            isOpen: true,
+            title,
+            message,
+            isAlert: true,
+            isLoading: false,
+            onConfirm: () => closeModal()
+        });
+    };
+
+    const closeModal = () => {
+        setModal(prev => ({ ...prev, isOpen: false }));
     };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -68,11 +105,13 @@ export default function SkillsAdminPage() {
                 fetchSkills();
                 (e.target as HTMLFormElement).reset();
                 setEditingSkill(null);
+                showAlert("Success", "Skill saved successfully!");
             } else {
-                alert("Failed to save skill");
+                showAlert("Error", "Failed to save skill", true);
             }
         } catch (error) {
             console.error("Error saving skill", error);
+            showAlert("Error", "An unexpected error occurred", true);
         } finally {
             setIsSaving(false);
         }
@@ -260,7 +299,7 @@ export default function SkillsAdminPage() {
                                                 </svg>
                                             </button>
                                             <button
-                                                onClick={() => handleDelete(skill.id)}
+                                                onClick={() => handleDeleteClick(skill.id)}
                                                 className="p-1 hover:text-red-500 text-gray-400 transition-colors"
                                                 title="Delete"
                                             >
@@ -301,6 +340,16 @@ export default function SkillsAdminPage() {
                     </div>
                 </div>
             </div>
+
+            <ConfirmationModal
+                isOpen={modal.isOpen}
+                onClose={closeModal}
+                onConfirm={modal.onConfirm}
+                title={modal.title}
+                message={modal.message}
+                isLoading={modal.isLoading}
+                isAlert={modal.isAlert}
+            />
         </div>
     );
 }

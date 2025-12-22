@@ -46,4 +46,6 @@ export async function createSession(payload: any) {
 export async function deleteSession() {
     const cookieStore = await cookies();
     cookieStore.delete("admin_session");
+    // Also try setting it to expire immediately as a fallback for some clients
+    cookieStore.set("admin_session", "", { maxAge: 0, path: "/" });
 }
