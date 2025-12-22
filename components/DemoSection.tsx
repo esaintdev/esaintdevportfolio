@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Portfolio {
    id: number;
@@ -90,7 +91,7 @@ export default function DemoSection({ limit, showViewMore, hideTitle }: DemoSect
                            {portfolio.isNew && <span className="tp-demo-new">NEW</span>}
                            <div className="tp-demo-thumb anim-zoomin p-relative">
                               <a href={getValidUrl(portfolio.link_light)} target="_blank">
-                                 <img
+                                 <Image
                                     src={
                                        portfolio.image.startsWith('http')
                                           ? portfolio.image
@@ -99,6 +100,10 @@ export default function DemoSection({ limit, showViewMore, hideTitle }: DemoSect
                                              : `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/portfolio/${portfolio.image}`
                                     }
                                     alt={portfolio.title}
+                                    width={600}
+                                    height={400}
+                                    className="object-cover"
+                                    style={{ width: '100%', height: 'auto' }}
                                  />
                               </a>
                               {/* Optional Figma badge if needed, kept from original static if desired, or conditional */}

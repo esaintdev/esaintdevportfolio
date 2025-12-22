@@ -3,23 +3,7 @@ import { createAdminClient } from "@/utils/supabase/admin";
 import { verifyToken } from "@/lib/session";
 import { cookies } from "next/headers";
 
-export async function GET() {
-    try {
-        const supabase = createAdminClient();
-        const { data, error } = await supabase
-            .from('skills')
-            .select('*')
-            .order('proficiency', { ascending: false });
-
-        if (error) throw error;
-
-        return NextResponse.json(data);
-    } catch (error) {
-        return NextResponse.json({ error: `Failed to fetch skills: ${(error as Error).message}` }, { status: 500 });
-    }
-}
-
-export async function POST(request: Request) {
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
     try {
         const cookieStore = await cookies();
         const token = cookieStore.get("admin_session")?.value;
@@ -30,17 +14,21 @@ export async function POST(request: Request) {
         }
 
         const supabase = createAdminClient();
-
-        // Parse FormData instead of JSON
         const formData = await request.formData();
+        const { id } = await params;
+
         const name = formData.get('name') as string;
         const proficiency = formData.get('proficiency');
         const category = formData.get('category') as string;
         const iconFile = formData.get('icon') as File | null;
 
-        let icon_url = null;
+        const updates: any = {
+            name,
+            proficiency: parseInt(proficiency as string),
+            category,
+        };
 
-        // Handle Icon Upload
+        // Handle Icon Upload if provided
         if (iconFile && iconFile.size > 0) {
             const fileExt = iconFile.name.split('.').pop();
             const fileName = `skill-${Date.now()}.${fileExt}`;
@@ -59,19 +47,13 @@ export async function POST(request: Request) {
                 .from('portfolio')
                 .getPublicUrl(filePath);
 
-            icon_url = publicUrl;
+            updates.icon_url = publicUrl;
         }
-
-        const newSkill = {
-            name,
-            proficiency: parseInt(proficiency as string),
-            category,
-            icon_url
-        };
 
         const { data, error } = await supabase
             .from('skills')
-            .insert(newSkill)
+            .update(updates)
+            .eq('id', id)
             .select()
             .single();
 
@@ -79,6 +61,32 @@ export async function POST(request: Request) {
 
         return NextResponse.json(data);
     } catch (error) {
-        return NextResponse.json({ error: `Failed to create skill: ${(error as Error).message}` }, { status: 500 });
+        return NextResponse.json({ error: `Failed to update skill: ${(error as Error).message}` }, { status: 500 });
+    }
+}
+
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+    try {
+        const cookieStore = await cookies();
+        const token = cookieStore.get("admin_session")?.value;
+        const payload = token ? await verifyToken(token) : null;
+
+        if (!payload) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
+
+        const supabase = createAdminClient();
+        const { id } = await params;
+
+        const { error } = await supabase
+            .from('skills')
+            .delete()
+            .eq('id', id);
+
+        if (error) throw error;
+
+        return NextResponse.json({ success: true });
+    } catch (error) {
+        return NextResponse.json({ error: `Failed to delete skill: ${(error as Error).message}` }, { status: 500 });
     }
 }
